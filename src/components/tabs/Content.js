@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import AllUsers from "../../components/UserTabs/AllUsers"
-import User from "../../components/UserTabs/User"
-import Xyz from "../../components/UserTabs/Xyz"
-import Abc from "../../components/UserTabs/Abc"
+import AllUsers from "../UserTabs/AllUsers"
+import User from "../UserTabs/User"
+import Xyz from "../UserTabs/Xyz"
+import Abc from "../UserTabs/Abc"
 
 const tabs = ["All Users", "User", "XYZ", "ABC"];
 
@@ -13,14 +13,14 @@ const tabComponents = {
   "ABC": Abc,
 };
 
-export default function Users() {
+export default function Content() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const ActiveComponent = tabComponents[activeTab];
 
   return (
     <div className="space-y-6">
       {/* Title */}
-      <h1 className="text-3xl font-bold text-gray-800">Users</h1>
+      <h1 className="text-3xl font-bold text-gray-800">Content</h1>
 
       {/* Sub Title */}
       <h3 className="text-xl font-semibold text-gray-600">Manage User Data</h3>

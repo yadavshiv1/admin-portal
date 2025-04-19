@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Dashboard from "./components/tabs/Dashboard";
-import Reports from "./components/tabs/Reports";
+import Reports from "./components/tabs/Content";
 import Analytics from "./components/tabs/Analytics";
 import Users from "./components/tabs/Users";
 import Settings from "./components/tabs/Settings";
@@ -43,9 +43,9 @@ export default function App() {
         className="absolute top-4 left-4 z-50 bg-white rounded-full shadow-md w-10 h-10 flex items-center justify-center hover:bg-gray-200"
       >
         {isSidebarOpen ? (
-          <ChevronLeftIcon className="w-5 h-5" />
+          <ArrowBackIosNewIcon className="w-5 h-5" />
         ) : (
-          <ChevronRightIcon className="w-5 h-5" />
+          <ArrowForwardIosIcon className="w-5 h-5" />
         )}
       </button>
 
