@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Dashboard from "./components/tabs/Dashboard";
-import Reports from "./components/tabs/Content";
+import Content from "./components/tabs/Content";
 import Analytics from "./components/tabs/Analytics";
 import Users from "./components/tabs/Users";
 import Settings from "./components/tabs/Settings";
@@ -16,7 +16,7 @@ import Logout from "./components/tabs/Logout";
 // Map tabs to their respective components
 const tabComponents = {
   Dashboard,
-  Reports,
+  Content,
   Analytics,
   Users,
   Settings,
@@ -34,13 +34,18 @@ export default function App() {
   return (
     <div className="flex h-screen bg-gray-100 relative">
       {/* Sidebar */}
-      <div className={`transition-all duration-300 ${isSidebarOpen ? "w-64" : "w-0"} overflow-hidden`}>
+      <div
+        className={`transition-all duration-300 ${isSidebarOpen ? "w-64" : "w-0"} overflow-hidden`}
+      >
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
 
+      {/* Toggle Button to open/close sidebar */}
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        className="absolute top-4 left-4 z-50 bg-white rounded-full shadow-md w-10 h-10 flex items-center justify-center hover:bg-gray-200"
+        className={`absolute top-14 z-50 bg-white rounded-full shadow-md w-10 h-10 flex items-center justify-center hover:bg-gray-200 transition-all duration-300 ${
+          isSidebarOpen ? "left-64" : "left-0"
+        }`}
       >
         {isSidebarOpen ? (
           <ArrowBackIosNewIcon className="w-5 h-5" />

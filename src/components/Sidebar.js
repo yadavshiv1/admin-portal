@@ -1,6 +1,6 @@
 import React from "react";
 
-const mainTabs = ["Dashboard", "Reports", "Analytics", "Users", "Settings", "Support"];
+const mainTabs = ["Dashboard", "Content", "Analytics", "Users", "Settings", "Support"];
 const extraTabs = ["Feedback", "Help", "Logout"];
 
 export default function Sidebar({ activeTab, setActiveTab }) {
