@@ -50,10 +50,10 @@ export default function Dashboard() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="flex justify-between bg-white rounded-xl shadow p-6">
-          <h4 className="text-lg font-semibold text-gray-700">Total Plays</h4>
-          <div>
-            Date
+      <div className="bg-white rounded-xl shadow p-6">
+          <div className="flex justify-between items-center mb-4">
+            <h4 className="text-lg font-semibold text-gray-700">Total Plays</h4>
+            <div>Date</div>
           </div>
           <Chart />
         </div>

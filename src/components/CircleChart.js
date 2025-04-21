@@ -45,39 +45,6 @@ export default function DonutPieChart() {
           onItemClick={(_, d) => setItemData(d)}
         />
       </Box>
-
-      <Stack direction="column" sx={{ width: { xs: '100%', md: '40%' } }}>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            mb: 1,
-          }}
-        >
-          <Typography variant="subtitle1">Clicked Slice Info</Typography>
-          <IconButton size="small" onClick={() => setItemData(undefined)}>
-            <UndoOutlinedIcon fontSize="small" />
-          </IconButton>
-        </Box>
-
-        <Box
-          component="pre"
-          sx={{
-            p: 2,
-            bgcolor: '#f5f5f5',
-            borderRadius: 2,
-            fontSize: 14,
-            overflowX: 'auto',
-          }}
-        >
-          <code>
-            {itemData
-              ? JSON.stringify(itemData, null, 2)
-              : '// Click a slice to view details'}
-          </code>
-        </Box>
-      </Stack>
     </Stack>
   );
 }

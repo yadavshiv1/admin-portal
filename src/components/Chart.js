@@ -25,8 +25,7 @@ export default function TickPlacementBars() {
             dataKey: 'month',
           },
         ]}
-        series={[{ dataKey: 'value', label: 'Sales' }]}
-        yAxis={[{ label: 'Units Sold' }]}
+        series={[{ dataKey: 'value'}]}
       />
     </div>
   );
