@@ -44,7 +44,7 @@ export default function PendingReviews() {
         {filteredTracks.map((track) => (
           <div
             key={track.id}
-            className="flex justify-between items-center p-4 border rounded-md shadow-sm hover:shadow-md transition"
+            className="lg:flex justify-between items-center p-4 border rounded-md shadow-sm hover:shadow-md transition"
           >
             {/* Left Section */}
             <div className="flex items-center gap-4">
@@ -54,8 +54,6 @@ export default function PendingReviews() {
                 <div className="text-sm text-gray-500">by {track.author}</div>
               </div>
             </div>
-
-            {/* Right Buttons */}
             <div className="flex gap-2">
               <Button variant="outlined" color="error">
                 Reject

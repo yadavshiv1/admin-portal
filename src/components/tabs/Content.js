@@ -23,15 +23,29 @@ export default function Content() {
 
   return (
     <div className="space-y-6">
-      {/* Title */}
-      <h1 className="text-3xl font-bold text-gray-800">Content</h1>
+      {/* Header Section with Title, Subtitle and Button */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+          {/* Title and Subtitle (Left) */}
+          <div>
+            <h1 className="text-3xl font-bold text-gray-800">Content</h1>
+            <h3 className="text-xl font-semibold text-gray-600">Manage User Data</h3>
+          </div>
 
-      {/* Sub Title */}
-      <h3 className="text-xl font-semibold text-gray-600">Manage User Data</h3>
+          {/* Add Button (Right) */}
+          <div className="mt-4 sm:mt-0">
+            <button
+              onClick={() => setShowModal(true)}
+              className="flex items-center gap-2 text-sm px-3 py-1.5 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
+            >
+              <Add fontSize="small" />
+              Add New Track
+            </button>
+          </div>
+        </div>
 
       {/* Tabs Navbar */}
       <div className="p-6 bg-white rounded-xl shadow space-y-4">
-      <div className="flex justify-between items-center border-b border-gray-300">
+      <div className="flex justify-between items-center border-b border-gray-300 overflow-x-auto">
       <div className="flex space-x-4">
         {tabs.map((tab) => (
           <button
@@ -47,13 +61,6 @@ export default function Content() {
           </button>
         ))}
         </div>
-          <button
-          onClick={() => setShowModal(true)}
-          className="flex items-center gap-2 text-sm px-3 py-1.5 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
-        >
-          <Add fontSize="small" />
-          Add New Track
-        </button>
       </div>
       </div>
 
