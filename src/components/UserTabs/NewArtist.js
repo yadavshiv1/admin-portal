@@ -19,7 +19,7 @@ const dummyUsers = [
   { name: 'Bob Williams', email: 'bob@example.com', date: '2024-02-15', role: 'Pending' },
 ];
 
-export default function AllUsers() {
+export default function NewArtist() {
   const [searchQuery, setSearchQuery] = useState('');
   const [users, setUsers] = useState(dummyUsers);
 
@@ -70,19 +70,30 @@ export default function AllUsers() {
                   {user.role === 'Pending' ? (
                     <>
                       <Button
-                        size="small"
-                        variant="contained"
-                        color="success"
-                        onClick={() => handleRoleChange(user.email, 'Approved')}
-                        sx={{ mr: 1 }}
-                      >
-                        Approve
-                      </Button>
+                          size="small"
+                          variant="contained"
+                          onClick={() => handleRoleChange(user.email, 'Approved')}
+                          sx={{ 
+                            mr: 1, 
+                            backgroundColor: 'rgba(37, 156, 229, 0.1)',
+                            border: '1px solid rgba(37, 156, 229, 1)',
+                            borderRadius: '8px',
+                            color: '#259CE5',
+                          }}
+                        >
+                          Approve
+                        </Button>
                       <Button
                         size="small"
-                        variant="outlined"
-                        color="error"
+                        variant="contained"
                         onClick={() => handleRoleChange(user.email, 'Rejected')}
+                        sx={{ 
+                          mr: 1, 
+                          backgroundColor: 'rgba(240, 87, 75, 0.1)',
+                          border: '1px solid rgba(240, 87, 75, 1)',
+                          borderRadius: '8px',
+                          color: 'rgba(240, 87, 75, 1)',
+                        }}
                       >
                         Reject
                       </Button>

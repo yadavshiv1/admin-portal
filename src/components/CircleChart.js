@@ -10,12 +10,11 @@ import { PieChart } from '@mui/x-charts/PieChart';
 
 const dummyData = [
   { label: 'Chrome', value: 52, color: '#259CE5' },
-  { label: 'Safari', value: 33, color: '#34C759' },
-  { label: 'Firefox', value: 15, color: '#FF9500' },
+  { label: 'Safari', value: 33, color: '#FEE43D99' },
+  { label: 'Firefox', value: 15, color: '#EEECF6' },
 ];
 
 
-// Format as percentage
 const valueFormatter = ({ value }) => `${value}%`;
 
 export default function DonutPieChart() {

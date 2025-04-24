@@ -23,21 +23,22 @@ export default function Content() {
 
   return (
     <div className="space-y-6 font-jakarta">
-      {/* Header Section with Title, Subtitle and Button */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-          {/* Title and Subtitle (Left) */}
           <div>
             <h1 className="text-3xl font-bold text-gray-800">Content</h1>
-            <h3 className="text-xl font-semibold text-gray-600">Manage User Data</h3>
+            <h3 className="text-xl font-semibold text-gray-600">Manage user & permissions</h3>
           </div>
 
-          {/* Add Button (Right) */}
           <div className="mt-4 sm:mt-0">
             <button
               onClick={() => setShowModal(true)}
-              className="flex items-center gap-2 text-sm px-3 py-1.5 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
+              className="flex items-center gap-2 text-sm px-3 py-1.5 rounded-md bg-[#259CE5] text-white hover:bg-[#259CE5] transition"
             >
-              <Add fontSize="small" />
+              <img 
+                src="/img/AddIcon.svg" 
+                alt="Add user" 
+                className="w-6 h-6 mr-2"
+              />
               Add New Track
             </button>
           </div>

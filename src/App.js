@@ -8,22 +8,22 @@ import CloseIcon from '@mui/icons-material/Close';
 import Dashboard from "./components/tabs/Dashboard";
 import Content from "./components/tabs/Content";
 import Analytics from "./components/tabs/Analytics";
-import Users from "./components/tabs/Users";
+import UsersManagement from "./components/tabs/UsersManagement";
 import Settings from "./components/tabs/Settings";
 import Support from "./components/tabs/Support";
 import Feedback from "./components/tabs/Feedback";
-import Help from "./components/tabs/Help";
+import Search from "./components/tabs/Search";
 import Logout from "./components/tabs/Logout";
 
 const tabComponents = {
   Dashboard,
-  Content,
+  "Content Management":Content,
   Analytics,
-  Users,
+  "Users Management": UsersManagement,
   Settings,
   Support,
   Feedback,
-  Help,
+  "Search & Discovery":Search,
   Logout,
 };
 

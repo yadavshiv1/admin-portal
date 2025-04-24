@@ -1,10 +1,11 @@
-import React from "react";
+import React,{ useState } from "react";
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import Chart from "../../components/Chart"
 import CircleChart from "../../components/CircleChart"
 
 export default function Dashboard() {
+  const [activeTab, setActiveTab] = useState("Positive");
 
   return (
     <div className="space-y-6 font-jakarta">
@@ -74,18 +75,58 @@ export default function Dashboard() {
         </div>
 
         <div className="bg-white rounded-xl shadow p-6">
-          <h4 className="text-lg font-semibold text-gray-700">User Feedback</h4>
-          <p className="text-sm text-gray-500 mt-2">
-            Collect and analyze feedback to improve user experience.
-          </p>
+          <div className="flex justify-between items-center mb-2">
+            <h4 className="text-lg font-semibold text-gray-700">User Feedback</h4>
+            <div className="flex space-x-2">
+              {["User Activity", "Content"].map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-3 py-1 text-sm rounded-full ${
+                    activeTab === tab
+                      ? "bg-[#F2F9FF] text-[#000000]"
+                      : "text-[#787C82]"
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="text-sm text-gray-600">
+            {activeTab === "Positive"
+              ? 
+                  <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <h1 className="text-xl font-bold text-gray-800">15.7 mins</h1>
+                    <p className="text-sm text-gray-600 mt-2">Avg. listening time</p>
+                  </div>
+                  <div>
+                    <h1 className="text-xl font-bold text-gray-800">80%</h1>
+                    <p className="text-sm text-gray-600 mt-2">Completion rate</p>
+                  </div>
+                </div>            
+              : <div>
+
+              </div>
+              }
+          </div>
         </div>
 
         <div className="bg-white rounded-xl shadow p-6">
-          <h4 className="text-lg font-semibold text-gray-700">System Health</h4>
-          <p className="text-sm text-gray-500 mt-2">
-            Real-time server status, uptime and response analytics.
-          </p>
-        </div>
+              <h4 className="text-lg font-semibold text-gray-700">Recent Activity</h4>
+
+              {[
+                { text: 'Latest user and content activities', time: '12min ago' },
+                { text: 'New user registered: Sarah M.', time: '12Hr ago' },
+                { text: 'New track uploaded: Evening Meditation', time: '2min ago' },
+              ].map((activity, index) => (
+                <div key={index} className="flex justify-between items-center mt-2">
+                  <p className="text-sm text-gray-500">{activity.text}</p>
+                  <span className="text-sm font-medium">{activity.time}</span>
+                </div>
+              ))}
+            </div>
       </div>
     </div>
   );

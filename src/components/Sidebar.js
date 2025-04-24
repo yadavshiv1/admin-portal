@@ -3,16 +3,16 @@ import { Avatar } from "@mui/material";
 
 const mainTabs = [
   { label: "Dashboard", icon: "/img/dashboardIcon.svg" },
-  { label: "Content", icon: "/img/contentManagementIcon.svg" },
+  { label: "Users Management", icon: "/img/userManagementIcon.svg"},
+  { label: "Content Management", icon: "/img/contentManagementIcon.svg" },
+  { label: "Search & Discovery", icon: "/img/searchIcon.svg" },
   { label: "Analytics", icon: "/img/AnalyticsIcon.svg" },
-  { label: "Users", icon: "/img/userManagementIcon.svg" },
-  { label: "Settings", icon: "/img/settingsIcon.svg" },
-  { label: "Support", icon: "/img/supportIcon.svg" },
 ];
 
 const extraTabs = [
-  { label: "Feedback", icon: "/icons/notificationIcon.svg" },
-  { label: "Help", icon: "/icons/help.svg" },
+  { label: "Notification", icon: "/img/notificationIcon.svg" },
+  { label: "Settings", icon: "/img/settingsIcon.svg" },
+  { label: "Support", icon: "/img/supportIcon.svg" },
 ];
 
 
