@@ -35,7 +35,6 @@ export default function App() {
 
   return (
     <div className="flex h-screen bg-gray-100 relative overflow-hidden">
-      {/* Mobile Sidebar */}
       <div
         className={`fixed top-0 left-0 h-full w-64 bg-white z-50 shadow-lg transform transition-transform duration-300 ease-in-out ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
@@ -49,7 +48,7 @@ export default function App() {
         </div>
         <Sidebar activeTab={activeTab} setActiveTab={(tab) => {
           setActiveTab(tab);
-          setIsSidebarOpen(false); // close sidebar on tab click
+          setIsSidebarOpen(false);
         }} />
       </div>
 
@@ -61,7 +60,6 @@ export default function App() {
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
 
-      {/* Hamburger Button (Only on Mobile) */}
       <button
         onClick={() => setIsSidebarOpen(true)}
         className="absolute top-4 left-4 z-40 sm:hidden bg-white rounded-full shadow-md w-10 h-10 flex items-center justify-center"
@@ -71,8 +69,8 @@ export default function App() {
       
       <button
         onClick={() => setIsDesktopSidebarOpen(!isDesktopSidebarOpen)}
-        className="hidden sm:flex absolute top-20 transform -translate-y-1/2 z-40 bg-white rounded-full shadow-md w-10 h-10 items-center justify-center"
-        style={{ left: isDesktopSidebarOpen ? "16rem" : "0.5rem" }} // Adjust based on sidebar width
+        className="hidden sm:flex absolute top-10 transform -translate-y-1/2 z-40 bg-white rounded-full shadow-md w-6 h-6 items-center justify-center"
+        style={{ left: isDesktopSidebarOpen ? "15rem" : "0.5rem" }}
       >
         {isDesktopSidebarOpen ? (
           <ArrowBackIosNewIcon className="w-5 h-5 text-gray-600" />
@@ -80,7 +78,6 @@ export default function App() {
           <ArrowForwardIosIcon className="w-5 h-5 text-gray-600" />
         )}
       </button>
-      {/* Main Content */}
       <div className="flex-1 flex flex-col w-full overflow-y-auto">
         <Navbar />
         <main className="p-6 text-lg flex-1 overflow-y-auto">

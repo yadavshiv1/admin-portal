@@ -1,7 +1,6 @@
 import React from 'react';
 import { BarChart } from '@mui/x-charts/BarChart';
 
-// Dummy data for chart
 const dummyData = [
   { month: 'Jan', value: 40 },
   { month: 'Feb', value: 55 },
@@ -25,7 +24,9 @@ export default function TickPlacementBars() {
             dataKey: 'month',
           },
         ]}
-        series={[{ dataKey: 'value'}]}
+        series={[{ dataKey: 'value',
+          color: '#259CE5',
+        }]}
       />
     </div>
   );

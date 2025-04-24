@@ -5,49 +5,54 @@ import Chart from "../../components/Chart"
 import CircleChart from "../../components/CircleChart"
 
 export default function Dashboard() {
-  const topBoxes = [
-    {
-      title: <PeopleOutlineIcon className="text-blue-500" />,
-      items: ["Total Users", "123,456", "+15% last Month"],
-    },
-    {
-      title: <LibraryMusicIcon className="text-blue-500" />,
-      items: ["Total Tracks", "123,456", "+15% last Month"],
-    },
-    {
-      title: "Performance",
-      items: ["Active Subscribers", "123,456", "+15% last Month"],
-    },
-  ];
 
   return (
-    <div className="space-y-6">
-      {/* Main Title */}
+    <div className="space-y-6 font-jakarta">
       <h1 className="text-3xl font-bold text-gray-800">Dashboard</h1>
 
-      {/* Sub Title */}
-      <h3 className="text-xl font-semibold text-gray-600">Overview Section</h3>
+      <h3 className="text-xl text-gray-600">Overview of the app</h3>
 
-      {/* Top 3 Boxes */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {topBoxes.map((box, idx) => (
-          <div key={idx} className="bg-white rounded-xl shadow p-4">
-            <div className="grid grid-cols-4 gap-2">
-              {/* Left: items - takes 3 parts */}
-              <div className="col-span-3 space-y-1">
-                {box.items.map((item, i) => (
-                  <p key={i} className="text-sm text-gray-700">{item}</p>
-                ))}
-              </div>
-
-              {/* Right: title/icon - takes 1 part */}
-              <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
-                {box.title}
-              </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-jakarta font-semibold">
+        <div className="bg-[#F8D4FF66] rounded-xl shadow p-4">
+          <div className="grid grid-cols-4 gap-2">
+            <div className="col-span-3 space-y-1">
+              <p className="text-sm text-gray-700">Total Users</p>
+              <p className="text-sm text-gray-700">123,456</p>
+              <p className="text-sm text-gray-700">+15% last Month</p>
+            </div>
+            <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
+            <img src="/img/userManagementIcon.svg" alt="Logo" className="h-7 w-7" />
             </div>
           </div>
-        ))}
+        </div>
+
+        <div className="bg-[#DFF3FF66] rounded-xl shadow p-4">
+          <div className="grid grid-cols-4 gap-2">
+            <div className="col-span-3 space-y-1">
+              <p className="text-sm text-gray-700">Total Tracks</p>
+              <p className="text-sm text-gray-700">123,456</p>
+              <p className="text-sm text-gray-700">+15% last Month</p>
+            </div>
+            <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
+            <img src="/img/contentManagementIcon.svg" alt="Logo" className="h-7 w-7" />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[#A3FF9766] rounded-xl shadow p-4">
+          <div className="grid grid-cols-4 gap-2">
+            <div className="col-span-3 space-y-1">
+              <p className="text-sm text-gray-700">Active Subscribers</p>
+              <p className="text-sm text-gray-700">123,456</p>
+              <p className="text-sm text-gray-700">+15% last Month</p>
+            </div>
+            <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
+            <img src="/img/activesubIcon.svg" alt="Logo" className="h-7 w-7" />
+            </div>
+          </div>
+        </div>
       </div>
+
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div className="bg-white rounded-xl shadow p-6">

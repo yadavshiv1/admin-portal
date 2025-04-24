@@ -8,14 +8,12 @@ import {
 import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
 import { PieChart } from '@mui/x-charts/PieChart';
 
-// Dummy data with percentages
 const dummyData = [
-  { label: 'Chrome', value: 45 },
-  { label: 'Safari', value: 25 },
-  { label: 'Firefox', value: 15 },
-  { label: 'Edge', value: 10 },
-  { label: 'Others', value: 5 },
+  { label: 'Chrome', value: 52, color: '#259CE5' },
+  { label: 'Safari', value: 33, color: '#34C759' },
+  { label: 'Firefox', value: 15, color: '#FF9500' },
 ];
+
 
 // Format as percentage
 const valueFormatter = ({ value }) => `${value}%`;
@@ -30,11 +28,11 @@ export default function DonutPieChart() {
       sx={{ width: '100%', p: 2 }}
     >
       <Box sx={{ flexGrow: 1 }}>
-        <PieChart
+      <PieChart
           series={[
             {
               data: dummyData,
-              innerRadius: 60, // 👈 This makes it a ring (donut)
+              innerRadius: 60,
               outerRadius: 100,
               valueFormatter,
               label: ({ label, value }) => `${label}: ${value}%`,

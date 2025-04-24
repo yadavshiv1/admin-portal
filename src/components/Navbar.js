@@ -27,10 +27,9 @@ export default function Navbar() {
         />
       </div>
   
-      {/* Avatar + Dropdown */}
       <div className="relative">
         <img
-          src="https://i.pravatar.cc/40"
+          src="img/Avatar.svg"
           alt="Avatar"
           className="w-10 h-10 rounded-full cursor-pointer"
           onClick={() => setDropdownOpen(!dropdownOpen)}

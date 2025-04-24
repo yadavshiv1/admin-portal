@@ -22,7 +22,7 @@ export default function Content() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-jakarta">
       {/* Header Section with Title, Subtitle and Button */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
           {/* Title and Subtitle (Left) */}
