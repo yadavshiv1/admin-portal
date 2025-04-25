@@ -10,7 +10,7 @@ const dummyTracks = [
     category: 'Lofi',
     duration: '3:25',
     plays: 1024,
-    status: true,
+    status: "Published",
   },
   {
     id: 2,
@@ -19,12 +19,30 @@ const dummyTracks = [
     category: 'EDM',
     duration: '4:10',
     plays: 870,
-    status: false,
+    status: "Pending",
+  },
+  {
+    id: 3,
+    name: 'Energetic Vibes',
+    author: 'Pulse Wave',
+    category: 'EDM',
+    duration: '4:10',
+    plays: 870,
+    status: "Unpublish",
   },
 ];
 
 export default function Albums() {
   const [query, setQuery] = useState('');
+
+  const [switchStates, setSwitchStates] = useState(() => {
+        const initialState = {};
+        dummyTracks.forEach((track) => {
+          initialState[track.id] = track.status === 'Published';
+        });
+        return initialState;
+      });
+  
 
   const filteredTracks = dummyTracks.filter((track) =>
     track.name.toLowerCase().includes(query.toLowerCase())
@@ -41,7 +59,6 @@ export default function Albums() {
         className="w-full p-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
       />
 
-      {/* Table */}
       <div className="overflow-x-auto">
         <table className="w-full text-sm text-left">
           <thead className="bg-gray-100 text-gray-600 font-medium">
@@ -57,53 +74,53 @@ export default function Albums() {
           <tbody className="divide-y">
             {filteredTracks.map((track) => (
               <tr key={track.id} className="hover:bg-gray-50">
-                {/* Tracks */}
                 <td className="p-3 flex items-center gap-3">
-                  <PlayArrow className="w-5 h-5 text-indigo-500" />
-                  <Description className="w-5 h-5 text-gray-400" />
+                  <img src="/img/playIcon.svg" alt="Logo" className="h-7 w-7" />
+                <div className='bg-[#259CE51A] p-1 rounded-lg border-[#259CE5]'><img src="/img/fileIcon.svg" alt="Logo" className="h-7 w-7" /></div>
                   <div>
+                  <div className='bg-[#259CE51A] p-1 rounded-lg border-[#259CE5]'><img src="/img/fileIcon.svg" alt="Logo" className="h-7 w-7" /></div>
                     <div className="font-semibold">{track.name}</div>
                     <div className="text-xs text-gray-500">{track.author}</div>
                   </div>
                 </td>
 
-                {/* Category */}
                 <td className="p-3">{track.category}</td>
 
-                {/* Duration */}
                 <td className="p-3">{track.duration}</td>
 
-                {/* Plays */}
                 <td className="p-3">{track.plays}</td>
 
-                {/* Status */}
                 <td className="p-3">
-                  <span
+                <span
                     className={`px-2 py-1 rounded-full text-xs font-medium ${
-                      track.status ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600'
+                      track.status === 'Published'
+                        ? 'text-[#259CE5]'
+                        : track.status === 'Pending'
+                        ? 'text-[#F97316]'
+                        : track.status === 'Unpublish'
+                        ? 'text-[#DDBF00]'
+                        : 'text-gray-600'
                     }`}
                   >
-                    {track.status ? 'Active' : 'Inactive'}
+                    {track.status}
                   </span>
                 </td>
 
-                {/* Action */}
                 <td className="p-3 flex items-center gap-4">
-                  <Switch
-                    checked={track.status}
-                    className={`${
-                      track.status ? 'bg-indigo-600' : 'bg-gray-300'
-                    } relative inline-flex h-5 w-10 items-center rounded-full transition`}
-                    disabled
-                  >
-                    <span
-                      className={`${
-                        track.status ? 'translate-x-5' : 'translate-x-1'
-                      } inline-block h-3 w-3 transform rounded-full bg-white transition`}
+                    <img
+                      src={switchStates[track.id] ? "/img/enableSwitchicon.svg" : "/img/disabledIcon.svg"}
+                      alt="Toggle"
+                      className="h-9 w-9 cursor-pointer"
+                      onClick={() =>
+                        setSwitchStates((prev) => ({
+                          ...prev,
+                          [track.id]: !prev[track.id],
+                        }))
+                      }
                     />
-                  </Switch>
-                  <Visibility className="w-5 h-5 text-gray-500 hover:text-indigo-600 cursor-pointer" />
-                </td>
+                    <button><img src="/img/viewIcon.svg" alt="Logo" className="h-7 w-7" /></button>
+
+                  </td>
               </tr>
             ))}
           </tbody>
