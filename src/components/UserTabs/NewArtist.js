@@ -41,14 +41,18 @@ export default function NewArtist() {
 
   return (
     <Box sx={{ p: 3 }}>
-      <TextField
-        fullWidth
-        label="Search by name or email"
-        variant="outlined"
-        value={searchQuery}
-        onChange={handleSearch}
-        sx={{ mb: 3 }}
-      />
+      <div className="flex items-center border border-gray-300 rounded-md bg-white px-3 py-2">
+        <img 
+          src="/img/searchIcon.svg"
+          alt="Search"
+          className="h-5 w-5 text-gray-400 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Search..."
+          className="bg-transparent focus:outline-none placeholder-gray-500 text-sm"
+        />
+        </div>
 
       <TableContainer component={Paper}>
         <Table>

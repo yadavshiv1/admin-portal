@@ -52,10 +52,10 @@ export default function Content() {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`py-2 px-4 text-sm font-medium border-b-2 transition duration-200 ${
+            className={`py-2 px-4 text-sm font-medium ${
               activeTab === tab
-                ? "border-blue-500 text-blue-600"
-                : "border-transparent text-gray-500 hover:text-blue-500"
+                ? "bg-[#F2F9FF] text-[#000000]"
+                      : "text-[#787C82]"
             }`}
           >
             {tab}

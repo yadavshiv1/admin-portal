@@ -22,7 +22,7 @@ export default function UsersManagement() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-3xl font-bold text-gray-800">Users</h1>
-          <h3 className="text-xl font-semibold text-gray-600">Manage user & permissions</h3>
+          <h3 className="text-xl text-gray-600">Manage user & permissions</h3>
         </div>
         <button className="flex items-center gap-2 px-4 py-2 bg-[#259CE5] text-white rounded-lg hover:bg-[#259CE5] transition-colors">
           <img 
@@ -34,16 +34,16 @@ export default function UsersManagement() {
         </button>
       </div>
 
-      <div className="flex items-center justify-between border-b border-gray-300 mt-4 pb-2">
-          <div className="flex space-x-4">
+      <div className="flex items-center justify-between mt-4 pb-2">
+          <div className="flex space-x-4 border border-grey-100 gap-x-6 rounded-md py-1">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`py-2 px-4 text-sm font-medium border-b-2 transition duration-200 ${
+                className={`py-2 px-4 text-sm font-medium transition duration-200 ${
                   activeTab === tab
-                    ? "border-blue-500 text-blue-600"
-                    : "border-transparent text-gray-500 hover:text-blue-500"
+                    ? "bg-[#F2F9FF] text-[#000000]"
+                      : "text-[#787C82]"
                 }`}
               >
                 {tab}
