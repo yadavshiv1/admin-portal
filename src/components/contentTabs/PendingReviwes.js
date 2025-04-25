@@ -41,6 +41,7 @@ export default function PendingReviews() {
 
   return (
     <div className="p-6 space-y-6 bg-white rounded-xl shadow">
+      
       <div>
         <h2 className="text-lg font-semibold">Pending Reviews</h2>
         <p className="text-gray-500 text-sm">These tracks are awaiting approval.</p>

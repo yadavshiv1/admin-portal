@@ -41,7 +41,7 @@ export default function NewArtist() {
 
   return (
     <Box sx={{ p: 3 }}>
-      <div className="flex items-center border border-gray-300 rounded-md bg-white px-3 py-2">
+      <div className="flex items-center border border-gray-300 rounded-md bg-white px-3 py-2 w-80 mb-6">
         <img 
           src="/img/searchIcon.svg"
           alt="Search"

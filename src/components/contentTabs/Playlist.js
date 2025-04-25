@@ -49,16 +49,35 @@ export default function Playlist() {
 
   return (
     <div className="p-6 space-y-6 bg-white rounded-xl shadow">
-      {/* Search Bar */}
-      <input
-        type="text"
-        placeholder="Search tracks..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        className="w-full p-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-      />
+      <div className="flex items-center space-x-4">
+            <div className="relative w-80">
+              <input
+                type="text"
+                placeholder="Search tracks..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                className="w-full p-2 pl-10 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+              />
+              <img 
+                src="/img/searchIcon.svg"
+                alt="Search"
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
+              />
+            </div>
 
-      {/* Table */}
+            <button 
+              className="flex items-center space-x-1 p-2 border rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              <img 
+                src="/img/filterIcon.svg"
+                alt="Filter"
+                className="h-5 w-5 text-gray-600"
+              />
+              <span className="text-sm font-medium">Filter</span>
+            </button>
+          </div>
+
+          
       <div className="overflow-x-auto">
         <table className="w-full text-sm text-left">
           <thead className="bg-gray-100 text-gray-600 font-medium">

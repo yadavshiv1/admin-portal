@@ -43,35 +43,35 @@ export default function AllUser() {
 
   return (
     <Box sx={{ p: 3 }}>
-      <Box sx={{ display: 'flex', alignItems: 'center',  mb: 3 }}>
-          <TextField
-            fullWidth
-            label="Search by name or email"
-            variant="outlined"
-            value={searchQuery}
-            onChange={handleSearch}
-            sx={{ mr: 2 ,width:'320px'}}
+      <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center border border-gray-300 rounded-md bg-white px-3 py-2 w-80">
+          <img 
+            src="/img/searchIcon.svg"
+            alt="Search"
+            className="h-5 w-5 text-gray-400 mr-2"
           />
-          <Box
-            component="button"
-            onClick={() => console.log('Filter clicked')}
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 1,
-              px: 2,
-              py: 1,
-              color: 'rgb(170, 162, 162)',
-              border: '1px solid rgb(143, 139, 139)',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              height: '100%',
-            }}
-          >
-          <img src='/img/filterIcon.svg' alt="filterIcon" className="w-5 h-5" />
-            Filter
-          </Box>
-        </Box>
+          <input
+            type="text"
+            placeholder="Search by name or email"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="bg-transparent focus:outline-none placeholder-gray-500 text-sm w-full"
+          />
+        </div>
+
+        <button 
+          onClick={() => console.log('Filter clicked')}
+          className="flex items-center space-x-2 px-3 py-1.5 border border-gray-400 rounded-lg text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        >
+          <img 
+            src="/img/filterIcon.svg"
+            alt="Filter"
+            className="w-5 h-5"
+          />
+          <span className="text-sm font-medium">Filter</span>
+        </button>
+      </div>
+
 
       <TableContainer component={Paper}>
         <Table>

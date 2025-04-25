@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import {
-  Switch,
-  IconButton,
   Card,
   CardContent,
   Typography,
-  TextField,
 } from '@mui/material';
-import VisibilityIcon from '@mui/icons-material/Visibility';
 
 const dummyUsers = [
   {
@@ -30,8 +26,16 @@ const dummyUsers = [
   },
 ];
 
-export default function Abc() {
+export default function Listeners() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [toggleStates, setToggleStates] = useState({});
+
+  const handleToggle = (index) => {
+    setToggleStates((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
 
   const filteredUsers = dummyUsers.filter((user) =>
     user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -48,26 +52,36 @@ export default function Abc() {
       {filteredUsers.map((user, index) => (
         <Card key={index} className="w-full shadow rounded-lg">
           <CardContent className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <div>
-              <Typography variant="h6">{user.name}</Typography>
-              <Typography variant="body2" color="textSecondary">{user.email}</Typography>
-              <Typography variant="body2" color="textSecondary">{user.date}</Typography>
+            <div className="flex items-center gap-6">
+              <img src="/img/artistImg.svg" alt="Logo" className="h-10 w-10 object-contain" />
+              <div>
+                <Typography variant="h6">{user.name}</Typography>
+                <Typography variant="body2" color="textSecondary">{user.email}</Typography>
+                <Typography variant="body2" color="textSecondary">{user.date}</Typography>
+              </div>
             </div>
 
             <div 
-                className="text-sm font-medium"
-                style={{
-                  color: user.status === 'Active' ? '#03BE26' : 
-                        user.status === 'Inactive' ? '#9747FF' : 
-                        '#6366F1'
-                }}
-              >
-                {user.status}
-              </div>
+              className="text-sm font-medium"
+              style={{
+                color: user.status === 'Active' ? '#03BE26' :
+                       user.status === 'Inactive' ? '#9747FF' :
+                       '#6366F1'
+              }}
+            >
+              {user.status}
+            </div>
 
-            <div className="flex items-center gap-2">
-              <Switch color="primary" />
-              <img src="/img/viewIcon.svg" alt="Logo" className="h-7 w-7" />
+            <div className="flex items-center gap-4">
+              <img
+                src={toggleStates[index] ? "/img/enableSwitchicon.svg" : "/img/disabledIcon.svg"}
+                alt="Toggle"
+                className="h-9 w-9 cursor-pointer"
+                onClick={() => handleToggle(index)}
+              />
+              <button>
+                <img src="/img/viewIcon.svg" alt="View" className="h-7 w-7" />
+              </button>
             </div>
           </CardContent>
         </Card>

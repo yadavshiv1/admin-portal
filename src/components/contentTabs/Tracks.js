@@ -50,8 +50,7 @@ export default function Tracks() {
   return (
     <div className="p-6 space-y-6 bg-white rounded-xl shadow">
      <div className="flex items-center space-x-2">
-        {/* Search Input */}
-        <div className="relative flex-1">
+     <div className="relative w-80">
           <input
             type="text"
             placeholder="Search tracks..."
@@ -64,7 +63,8 @@ export default function Tracks() {
             alt="Search"
             className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
           />
-        </div>
+          </div>
+
 
         <button 
           className="flex items-center space-x-1 p-2 border rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -137,9 +137,7 @@ export default function Tracks() {
                       }
                     />
                     <button><img src="/img/viewIcon.svg" alt="Logo" className="h-7 w-7" /></button>
-
                   </td>
-
               </tr>
             ))}
           </tbody>
