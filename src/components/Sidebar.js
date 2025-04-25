@@ -16,13 +16,21 @@ const extraTabs = [
 ];
 
 
-export default function Sidebar({ activeTab, setActiveTab }) {
+export default function Sidebar({ activeTab, setActiveTab}) {
+  const role = localStorage.getItem("role");
+  const allowedTabsForArtist = ["Content Management", "Dashboard"];
+
   return (
     <aside className="w-80 h-screen bg-white shadow-lg flex flex-col justify-between font-jakarta">
       <div>
       <div className="p-6 text-xl font-bold text-[#081021] flex items-center gap-2 font-jakarta"><img src="/img/logo.svg" alt="Logo" className="h-7 w-7" />Yogananda Music</div>        
       <nav className="p-4 space-y-2 overflow-y-auto">
-      {mainTabs.map((tab) => (
+      {mainTabs.filter((tab) => {
+              if (role === "artist") {
+                return allowedTabsForArtist.includes(tab.label);
+              }
+              return true;
+            }).map((tab) => (
           <button
             key={tab.label}
             className={`w-full flex items-center gap-2 text-left px-4 py-2 rounded hover:bg-indigo-50 ${
@@ -37,18 +45,24 @@ export default function Sidebar({ activeTab, setActiveTab }) {
 
           <hr className="my-4" />
 
-          {extraTabs.map((tab) => (
-          <button
-            key={tab.label}
-            className={`w-full flex items-center gap-2 text-left px-4 py-2 rounded hover:bg-indigo-50 ${
-              activeTab === tab.label ? "bg-indigo-100 font-semibold" : ""
-            }`}
-            onClick={() => setActiveTab(tab.label)}
-          >
-            <img src={tab.icon} alt={tab.label} className="w-5 h-5" />
-            {tab.label}
-          </button>
-          ))}
+          {extraTabs.filter((tab) => {
+              if (role === "artist") {
+                return tab.label === "Support";
+              }
+              return true;
+            })
+            .map((tab) => (
+              <button
+                key={tab.label}
+                className={`w-full flex items-center gap-2 text-left px-4 py-2 rounded hover:bg-indigo-50 ${
+                  activeTab === tab.label ? "bg-indigo-100 font-semibold" : ""
+                }`}
+                onClick={() => setActiveTab(tab.label)}
+              >
+                <img src={tab.icon} alt={tab.label} className="w-5 h-5" />
+                {tab.label}
+              </button>
+            ))}
 
         </nav>
       </div>

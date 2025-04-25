@@ -20,7 +20,7 @@ export default function PendingReviews() {
   const [query, setQuery] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [sliderValue, setSliderValue] = useState(0);
-
+  const role = localStorage.getItem("role");
   const dummyData = `Whispers from the universe,
   In the stillness of the dawn, I hear a sacred call,
   Whispers from the universe, In the stillness of the dawn,
@@ -61,27 +61,34 @@ export default function PendingReviews() {
                 <div className="text-sm text-gray-500">by {track.author}</div>
               </div>
             </div>
+            
+            
             <div className="flex gap-2">
-              <Button variant="outlined" sx={{ 
-                          mr: 1, 
-                          backgroundColor: 'rgba(240, 87, 75, 0.1)',
-                          border: '1px solid rgba(240, 87, 75, 1)',
-                          borderRadius: '8px',
-                          color: 'rgba(240, 87, 75, 1)',
-                        }}>
-                Reject
-              </Button>
-              <Button variant="contained" sx={{ 
-                            mr: 1, 
-                            backgroundColor: '#259CE5',
-                            border: '1px solid rgba(37, 156, 229, 1)',
-                            borderRadius: '8px',
-                            color: '#FFFFFF',
-                          }}>
-                Approve
-              </Button>
+            {role==="admin" &&(
+              <>
+              <Button variant="outlined" sx={{
+                  mr: 1,
+                  backgroundColor: 'rgba(240, 87, 75, 0.1)',
+                  border: '1px solid rgba(240, 87, 75, 1)',
+                  borderRadius: '8px',
+                  color: 'rgba(240, 87, 75, 1)',
+                }}>
+                  Reject
+                </Button>
+                <Button variant="contained" sx={{
+                  mr: 1,
+                  backgroundColor: '#259CE5',
+                  border: '1px solid rgba(37, 156, 229, 1)',
+                  borderRadius: '8px',
+                  color: '#FFFFFF',
+                }}>
+                    Approve
+                  </Button>
+              </>
+              )}
               <button onClick={() => setShowModal(true)}><img src="/img/viewIcon.svg" alt="Logo" className="h-7 w-7" /></button>
             </div>
+            
           </div>
         ))}
         {showModal && (

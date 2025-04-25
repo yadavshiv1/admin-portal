@@ -32,7 +32,7 @@ export default function UsersManagement() {
                     alt="Add"
                     className="w-6 h-6"
                   />
-                  Add Track
+                  Add User
                 </button>
       </div>
 

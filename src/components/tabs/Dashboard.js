@@ -6,6 +6,7 @@ import CircleChart from "../../components/CircleChart"
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("Positive");
+  const role = localStorage.getItem("role");
 
   return (
     <div className="space-y-6 font-jakarta">
@@ -13,7 +14,60 @@ export default function Dashboard() {
 
       <h3 className="text-xl text-gray-600">Overview of the app</h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-jakarta font-semibold">
+      {role==="admin" &&(<div> <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-jakarta font-semibold">
+        <div className="bg-[#F8D4FF66] rounded-xl shadow p-4">
+          <div className="grid grid-cols-4 gap-2">
+            <div className="col-span-3 space-y-1">
+              <p className="text-sm text-gray-700">Total Users</p>
+              <p className="text-sm text-gray-700">123,456</p>
+              <p className="text-sm text-gray-700">+15% last Month</p>
+            </div>
+            <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
+            <img src="/img/userManagementIcon.svg" alt="Logo" className="h-7 w-7" />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[#DFF3FF66] rounded-xl shadow p-4">
+          <div className="grid grid-cols-4 gap-2">
+            <div className="col-span-3 space-y-1">
+              <p className="text-sm text-gray-700">Total Tracks</p>
+              <p className="text-sm text-gray-700">123,456</p>
+              <p className="text-sm text-gray-700">+15% last Month</p>
+            </div>
+            <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
+            <img src="/img/contentManagementIcon.svg" alt="Logo" className="h-7 w-7" />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[#A3FF9766] rounded-xl shadow p-4">
+          <div className="grid grid-cols-4 gap-2">
+            <div className="col-span-3 space-y-1">
+              <p className="text-sm text-gray-700">Active Subscribers</p>
+              <p className="text-sm text-gray-700">123,456</p>
+              <p className="text-sm text-gray-700">+15% last Month</p>
+            </div>
+            <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
+            <img src="/img/activesubIcon.svg" alt="Logo" className="h-7 w-7" />
+            </div>
+          </div>
+        </div>
+      </div></div>)}
+      
+      {role==="artist" &&(<div><div className="grid grid-cols-1 md:grid-cols-4 gap-4 font-jakarta font-semibold">
+        <div className="bg-[#F8D4FF66] rounded-xl shadow p-4">
+          <div className="grid grid-cols-4 gap-2">
+            <div className="col-span-3 space-y-1">
+              <p className="text-sm text-gray-700">Total Users</p>
+              <p className="text-sm text-gray-700">123,456</p>
+              <p className="text-sm text-gray-700">+15% last Month</p>
+            </div>
+            <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
+            <img src="/img/userManagementIcon.svg" alt="Logo" className="h-7 w-7" />
+            </div>
+          </div>
+        </div>
         <div className="bg-[#F8D4FF66] rounded-xl shadow p-4">
           <div className="grid grid-cols-4 gap-2">
             <div className="col-span-3 space-y-1">
@@ -53,7 +107,7 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-
+      </div>)}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div className="bg-white rounded-xl shadow p-6">
@@ -63,16 +117,17 @@ export default function Dashboard() {
           </div>
           <Chart />
         </div>
-
-        <div className="bg-white rounded-xl shadow p-6">
-          <h4 className="text-lg font-semibold text-gray-700">User Overview</h4>
-          <p className="text-sm text-gray-500 mt-2">
-            Monitor performance of your most popular products here.
-          </p>
+        {role==="admin" &&(
           <div>
-            <CircleChart />
-          </div>
-        </div>
+            <div className="bg-white rounded-xl shadow p-6">
+              <h4 className="text-lg font-semibold text-gray-700">User Overview</h4>
+              <p className="text-sm text-gray-500 mt-2">
+                Monitor performance of your most popular products here.
+              </p>
+              <div>
+                <CircleChart />
+              </div>
+            </div>
 
         <div className="bg-white rounded-xl shadow p-6">
           <div className="flex justify-between items-center mb-2">
@@ -112,10 +167,13 @@ export default function Dashboard() {
               }
           </div>
         </div>
-
+        </div>
+        )}
         <div className="bg-white rounded-xl shadow p-6">
               <h4 className="text-lg font-semibold text-gray-700">Recent Activity</h4>
 
+              {role==="admin" &&(
+          <div>
               {[
                 { text: 'Latest user and content activities', time: '12min ago' },
                 { text: 'New user registered: Sarah M.', time: '12Hr ago' },
@@ -126,6 +184,8 @@ export default function Dashboard() {
                   <span className="text-sm font-medium">{activity.time}</span>
                 </div>
               ))}
+            </div>
+            )}
             </div>
       </div>
     </div>

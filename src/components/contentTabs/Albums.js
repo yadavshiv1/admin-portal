@@ -34,7 +34,7 @@ const dummyTracks = [
 
 export default function Albums() {
   const [query, setQuery] = useState('');
-
+  const role = localStorage.getItem("role");
   const [switchStates, setSwitchStates] = useState(() => {
         const initialState = {};
         dummyTracks.forEach((track) => {
@@ -126,6 +126,7 @@ export default function Albums() {
                 </td>
 
                 <td className="p-3 flex items-center gap-4">
+                {role==="admin" &&(
                     <img
                       src={switchStates[track.id] ? "/img/enableSwitchicon.svg" : "/img/disabledIcon.svg"}
                       alt="Toggle"
@@ -136,7 +137,7 @@ export default function Albums() {
                           [track.id]: !prev[track.id],
                         }))
                       }
-                    />
+                    />)}
                     <button><img src="/img/viewIcon.svg" alt="Logo" className="h-7 w-7" /></button>
 
                   </td>

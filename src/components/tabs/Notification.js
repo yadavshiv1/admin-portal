@@ -1,11 +1,10 @@
 import React from "react";
-import UserDetails from "../userDetails/UserDetails";
+import LoginScreen from "../LoginScreen";
 
-export default function Settings() {
+export default function Notification() {
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
-      <UserDetails />
+      <LoginScreen />
     </div>
   );
 }
