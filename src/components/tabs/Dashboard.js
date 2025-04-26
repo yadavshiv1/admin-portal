@@ -130,44 +130,53 @@ export default function Dashboard() {
               </div>
             </div>
 
-        <div className="bg-white rounded-xl shadow p-6">
-          <div className="flex justify-between items-center mb-2">
-            <h4 className="text-lg font-semibold text-gray-700">User Feedback</h4>
-            <div className="flex space-x-2">
-              {["User Activity", "Content"].map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-3 py-1 text-sm rounded-full ${
-                    activeTab === tab
-                      ? "bg-[#F2F9FF] text-[#000000]"
-                      : "text-[#787C82]"
-                  }`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-          </div>
-          <div className="text-sm text-gray-600">
-            {activeTab === "Positive"
-              ? 
-                  <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <h1 className="text-xl font-bold text-gray-800">15.7 mins</h1>
-                    <p className="text-sm text-gray-600 mt-2">Avg. listening time</p>
-                  </div>
-                  <div>
-                    <h1 className="text-xl font-bold text-gray-800">80%</h1>
-                    <p className="text-sm text-gray-600 mt-2">Completion rate</p>
-                  </div>
-                </div>            
-              : <div>
-
+            <div className="bg-white rounded-xl shadow p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h4 className="text-lg font-semibold text-gray-700">User Feedback</h4>
+                <div className="flex space-x-2">
+                  {["User Activity", "Content"].map((tab) => (
+                    <button
+                      key={tab}
+                      onClick={() => setActiveTab(tab)}
+                      className={`px-3 py-1 text-sm rounded-full ${
+                        activeTab === tab
+                          ? "bg-[#F2F9FF] text-black font-semibold"
+                          : "text-gray-500 hover:bg-gray-100"
+                      }`}
+                    >
+                      {tab}
+                    </button>
+                  ))}
+                </div>
               </div>
-              }
-          </div>
-        </div>
+
+              {/* Tab Content */}
+              <div className="text-sm text-gray-600 mt-4">
+                {activeTab === "User Activity" ? (
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <h1 className="text-xl font-bold text-gray-800">15.7 mins</h1>
+                      <p className="text-sm text-gray-500 mt-1">Avg. listening time</p>
+                    </div>
+                    <div>
+                      <h1 className="text-xl font-bold text-gray-800">80%</h1>
+                      <p className="text-sm text-gray-500 mt-1">Completion rate</p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <h1 className="text-xl font-bold text-gray-800">1200</h1>
+                      <p className="text-sm text-gray-500 mt-1">Total Contents</p>
+                    </div>
+                    <div>
+                      <h1 className="text-xl font-bold text-gray-800">95%</h1>
+                      <p className="text-sm text-gray-500 mt-1">Content Approval</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
         </div>
         )}
         <div className="bg-white rounded-xl shadow p-6">
