@@ -129,8 +129,9 @@ export default function Dashboard() {
                 <CircleChart />
               </div>
             </div>
-
-            <div className="bg-white rounded-xl shadow p-6">
+        </div>
+        )}
+        <div className="bg-white rounded-xl shadow p-6">
               <div className="flex justify-between items-center mb-4">
                 <h4 className="text-lg font-semibold text-gray-700">User Feedback</h4>
                 <div className="flex space-x-2">
@@ -176,27 +177,26 @@ export default function Dashboard() {
                   </div>
                 )}
               </div>
-            </div>
         </div>
-        )}
         <div className="bg-white rounded-xl shadow p-6">
               <h4 className="text-lg font-semibold text-gray-700">Recent Activity</h4>
 
               {role==="admin" &&(
-          <div>
-              {[
-                { text: 'Latest user and content activities', time: '12min ago' },
-                { text: 'New user registered: Sarah M.', time: '12Hr ago' },
-                { text: 'New track uploaded: Evening Meditation', time: '2min ago' },
-              ].map((activity, index) => (
-                <div key={index} className="flex justify-between items-center mt-2">
-                  <p className="text-sm text-gray-500">{activity.text}</p>
-                  <span className="text-sm font-medium">{activity.time}</span>
-                </div>
-              ))}
-            </div>
-            )}
-            </div>
+                <div>
+                    {[
+                      { text: 'Latest user and content activities', time: '12min ago' },
+                      { text: 'New user registered: Sarah M.', time: '12Hr ago' },
+                      { text: 'New track uploaded: Evening Meditation', time: '2min ago' },
+                    ].map((activity, index) => (
+                      <div key={index} className="flex justify-between items-center mt-2">
+                        <p className="text-sm text-gray-500">{activity.text}</p>
+                        <span className="text-sm font-medium">{activity.time}</span>
+                      </div>
+                    ))}
+                  </div>
+                  )}
+        </div>
+        
       </div>
     </div>
   );
