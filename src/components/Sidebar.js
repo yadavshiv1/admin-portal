@@ -1,18 +1,27 @@
 import React, { useState } from "react";
 import { Avatar } from "@mui/material";
+import DashboardIcon from "../../src/assets/dashboardIcon.svg";
+import ActiveDashboardIcon from "../../src/assets/activedashboardIcon.svg";
+import UserManagementIcon from "../../src/assets/userManagementIcon.svg";
+import ActiveUserManagementIcon from "../../src/assets/activeuserManagementIcon.svg";
+import ContentManagementIcon from "../../src/assets/contentManagementIcon.svg";
+import ActiveContentManagementIcon from "../../src/assets/activecontentManagementIcon.svg";
+import ManageCouponIcon from "../../src/assets/manageCouponIcon.svg";
+import ActiveManageCouponIcon from "../../src/assets/activemanageCouponIcon.svg";
+import SettingsIcon from "../../src/assets/settingsIcon.svg";
+import SupportIcon from "../../src/assets/supportIcon.svg";
+import AvatarImg from "../../src/assets/Avatar.svg";
 
 const mainTabs = [
-  { label: "Dashboard", icon: "/img/dashboardIcon.svg",activeIcon:"/img/activedashboardIcon.svg"},
-  { label: "Users Management", icon: "/img/userManagementIcon.svg",activeIcon:"/img/activeuserManagementIcon.svg" },
-  { label: "Content Management", icon: "/img/contentManagementIcon.svg",activeIcon:"/img/activecontentManagementIcon.svg" },
-  { label: "Manage Coupon", icon: "/img/manageCouponIcon.svg",activeIcon:"/img/activemanageCouponIcon.svg" },
-  // { label: "Analytics", icon: "/img/AnalyticsIcon.svg",activeIcon:"/img/activeuserManagementIcon.svg" },
+  { label: "Dashboard", icon: DashboardIcon, activeIcon: ActiveDashboardIcon },
+  { label: "Users Management", icon: UserManagementIcon, activeIcon: ActiveUserManagementIcon },
+  { label: "Content Management", icon: ContentManagementIcon, activeIcon: ActiveContentManagementIcon },
+  { label: "Manage Coupon", icon: ManageCouponIcon, activeIcon: ActiveManageCouponIcon },
 ];
 
 const extraTabs = [
-  // { label: "Notification", icon: "/img/notificationIcon.svg" ,activeIcon:"/img/activeuserManagementIcon.svg"},
-  { label: "Settings", icon: "/img/settingsIcon.svg",activeIcon:"/img/activeuserManagementIcon.svg" },
-  { label: "Support", icon: "/img/supportIcon.svg",activeIcon:"/img/activeuserManagementIcon.svg"},
+  { label: "Settings", icon: SettingsIcon, activeIcon: ActiveUserManagementIcon },
+  { label: "Support", icon: SupportIcon, activeIcon: ActiveUserManagementIcon },
 ];
 
 
@@ -24,7 +33,7 @@ export default function Sidebar({ activeTab, setActiveTab}) {
   return (
     <aside className="h-screen bg-white shadow-lg flex flex-col justify-between font-jakarta">
       <div>
-      <div className="p-4 text-xl font-bold text-[#081021] flex items-center gap-2 font-jakarta"><img src="/img/logo.svg" alt="Logo" className="h-10 w-10" />Yogananda Music</div>        
+      <div className="p-4 text-xl font-bold text-[#081021] flex items-center gap-2 font-jakarta"><img src="/assets/Logo.svg" alt="Logo" className="h-10 w-10" />Yogananda Music</div>        
       <nav className="p-4 space-y-2 overflow-y-auto">
       {mainTabs.filter((tab) => {
               if (role === "artist") {
@@ -77,7 +86,7 @@ export default function Sidebar({ activeTab, setActiveTab}) {
 
       <div className="border-t px-4 py-3">
         <div className="flex items-center gap-3">
-          <Avatar src="img/Avatar.svg" alt="User" />
+          <Avatar src={AvatarImg} alt="User" />
           <div>
             <p className="text-sm font-medium">John Doe</p>
             <p className="text-xs text-gray-500">john@example.com</p>

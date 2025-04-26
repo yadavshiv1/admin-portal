@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { PlayArrow, Description, Visibility } from '@mui/icons-material';
 import { Switch } from '@mui/material';
+import FilterIcon from "../../assets/filterIcon.svg";
+import FileIcon from "../../assets/fileIcon.svg";
+import ViewIcon from "../../assets/viewIcon.svg";
+import PlayIcon from "../../assets/playIcon.svg";
 
 const dummyTracks = [
   {
@@ -71,7 +75,7 @@ export default function Tracks() {
           className="flex items-center space-x-1 p-2 border rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
         >
           <img 
-            src="/img/filterIcon.svg"
+            src={FilterIcon}
             alt="Filter"
             className="h-5 w-5 text-gray-600"
           />
@@ -95,8 +99,8 @@ export default function Tracks() {
             {filteredTracks.map((track) => (
               <tr key={track.id} className="hover:bg-gray-50">
                 <td className="p-3 flex items-center gap-3">
-                <img src="/img/playIcon.svg" alt="Logo" className="h-7 w-7" />
-                <div className='bg-[#259CE51A] p-1 rounded-lg border-[#259CE5]'><img src="/img/fileIcon.svg" alt="Logo" className="h-7 w-7" /></div>
+                <img src={PlayIcon} alt="Logo" className="h-7 w-7" />
+                <div className='bg-[#259CE51A] p-1 rounded-lg border-[#259CE5]'><img src={FileIcon} alt="Logo" className="h-7 w-7" /></div>
                   <div>
                     <div className="font-semibold">{track.name}</div>
                     <div className="text-xs text-gray-500">{track.author}</div>
@@ -138,7 +142,7 @@ export default function Tracks() {
                         }))
                       }
                     />)}
-                    <button><img src="/img/viewIcon.svg" alt="Logo" className="h-7 w-7" /></button>
+                    <button><img src={ViewIcon} alt="Logo" className="h-7 w-7" /></button>
                   </td>
               </tr>
             ))}

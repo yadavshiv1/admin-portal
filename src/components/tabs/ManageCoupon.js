@@ -1,5 +1,8 @@
 import { useState } from "react";
 import SwitchBtn from "../buttons/SwitchBtn";
+import PlusIcon from "../../assets/PlusIcon.svg";
+import Minusicon from "../../assets/Minusicon.svg";
+import dollarIcon from "../../assets/dollarIcon.svg";
 
 export default function ManageCoupon() {
   const [amount, setAmount] = useState(0);
@@ -27,7 +30,7 @@ export default function ManageCoupon() {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Discount Amount</label>
             <div className="w-64 flex items-center gap-2 border border-gray-300 rounded-3xl">
-              <img src="/img/dollarIcon.svg" alt="Money" className="h-6 w-6 ml-3" />
+              <img src={dollarIcon} alt="Money" className="h-6 w-6 ml-3" />
               <input
                 type="number"
                 value={amount}
@@ -36,10 +39,10 @@ export default function ManageCoupon() {
               />
               <div className="flex gap-3">
               <button onClick={handleDecrease}>
-                  <img src="/img/Minusicon.svg" alt="Minus" className="h-5 w-5" />
+                  <img src={Minusicon} alt="Minus" className="h-5 w-5" />
                 </button>
                 <button onClick={handleIncrease}>
-                  <img src="/img/PlusIcon.svg" alt="Plus" className="h-5 w-5" />
+                  <img src={PlusIcon} alt="Plus" className="h-5 w-5" />
                 </button>
               </div>
             </div>
@@ -58,7 +61,7 @@ export default function ManageCoupon() {
               <h4 className="font-medium text-gray-800">Make this coupon available</h4>
               <p className="text-sm text-gray-500">Active</p>
             </div>
-            <img src="/img/sample-image.svg" alt="Icon" className="h-10 w-10" />
+            <img src={PlusIcon} alt="Icon" className="h-10 w-10" />
           </div>
         </div>
         <div className="space-y-4 border border-gray-300">
@@ -74,7 +77,7 @@ export default function ManageCoupon() {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Discount Amount</label>
             <div className="flex items-center gap-2">
-              <img src="/img/money-icon.svg" alt="Money" className="h-6 w-6" />
+              <img src={PlusIcon} alt="Money" className="h-6 w-6" />
               <input
                 type="number"
                 value={amount}
@@ -84,10 +87,10 @@ export default function ManageCoupon() {
               {/* - / + buttons */}
               <div className="flex flex-col gap-1">
                 <button onClick={handleIncrease}>
-                  <img src="/img/plus-icon.svg" alt="Plus" className="h-5 w-5" />
+                  <img src={PlusIcon} alt="Plus" className="h-5 w-5" />
                 </button>
                 <button onClick={handleDecrease}>
-                  <img src="/img/minus-icon.svg" alt="Minus" className="h-5 w-5" />
+                  <img src={PlusIcon} alt="Minus" className="h-5 w-5" />
                 </button>
               </div>
             </div>
@@ -116,7 +119,7 @@ export default function ManageCoupon() {
 
       <div className="flex justify-center pt-6">
         <button className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">
-          <img src="/img/submit-icon.svg" alt="Submit" className="h-5 w-5" />
+          <img src={PlusIcon} alt="Submit" className="h-5 w-5" />
           <span>Submit Coupon</span>
         </button>
       </div>

@@ -3,6 +3,9 @@ import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import Chart from "../../components/Chart"
 import CircleChart from "../../components/CircleChart"
+import UserManagementIcon from "../../assets/userManagementIcon.svg";
+import contentManagementIcon from "../../assets/contentManagementIcon.svg";
+import activesubIcon from "../../assets/activesubIcon.svg";
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("Positive");
@@ -24,7 +27,7 @@ export default function Dashboard() {
               <p className="text-sm text-gray-700">+15% last Month</p>
             </div>
             <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
-            <img src="/img/userManagementIcon.svg" alt="Logo" className="h-7 w-7" />
+            <img src={UserManagementIcon} alt="Logo" className="h-7 w-7" />
             </div>
           </div>
         </div>
@@ -37,7 +40,7 @@ export default function Dashboard() {
               <p className="text-sm text-gray-700">+15% last Month</p>
             </div>
             <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
-            <img src="/img/contentManagementIcon.svg" alt="Logo" className="h-7 w-7" />
+            <img src={contentManagementIcon} alt="Logo" className="h-7 w-7" />
             </div>
           </div>
         </div>
@@ -50,7 +53,7 @@ export default function Dashboard() {
               <p className="text-sm text-gray-700">+15% last Month</p>
             </div>
             <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
-            <img src="/img/activesubIcon.svg" alt="Logo" className="h-7 w-7" />
+            <img src={activesubIcon} alt="Logo" className="h-7 w-7" />
             </div>
           </div>
         </div>
@@ -65,7 +68,7 @@ export default function Dashboard() {
               <p className="text-sm text-gray-700">+15% last Month</p>
             </div>
             <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
-            <img src="/img/userManagementIcon.svg" alt="Logo" className="h-7 w-7" />
+            <img src={UserManagementIcon} alt="Logo" className="h-7 w-7" />
             </div>
           </div>
         </div>
@@ -77,7 +80,7 @@ export default function Dashboard() {
               <p className="text-sm text-gray-700">+15% last Month</p>
             </div>
             <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
-            <img src="/img/userManagementIcon.svg" alt="Logo" className="h-7 w-7" />
+            <img src={UserManagementIcon} alt="Logo" className="h-7 w-7" />
             </div>
           </div>
         </div>
@@ -90,7 +93,7 @@ export default function Dashboard() {
               <p className="text-sm text-gray-700">+15% last Month</p>
             </div>
             <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
-            <img src="/img/contentManagementIcon.svg" alt="Logo" className="h-7 w-7" />
+            <img src={contentManagementIcon} alt="Logo" className="h-7 w-7" />
             </div>
           </div>
         </div>
@@ -103,7 +106,7 @@ export default function Dashboard() {
               <p className="text-sm text-gray-700">+15% last Month</p>
             </div>
             <div className="col-span-1 text-gray-500 font-medium flex items-start justify-end">
-            <img src="/img/activesubIcon.svg" alt="Logo" className="h-7 w-7" />
+            <img src={activesubIcon} alt="Logo" className="h-7 w-7" />
             </div>
           </div>
         </div>

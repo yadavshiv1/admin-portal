@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginAndContineBtn from "./buttons/LoginAndContinueBtn";
+import LoginScreenImage from "../../src/assets/loginScreen.svg";
+import GoogleIcon from "../../src/assets/Googleicon.svg"; 
 
 export default function LoginScreen() {
   const [activeTab, setActiveTab] = useState("Artist");
@@ -34,7 +36,7 @@ export default function LoginScreen() {
     <div className="flex">
       <div className="w-1/3">
         <img
-          src="/img/loginScreen.svg"
+          src={LoginScreenImage}
           alt="Login Visual"
           className=" h-screen object-cover"
         />
@@ -120,7 +122,7 @@ export default function LoginScreen() {
           </div>
 
           <div className="flex justify-center">
-            <img src="/img/Googleicon.svg" alt="Google Login" className="w-8 h-8 cursor-pointer" />
+            <img src={GoogleIcon} alt="Google Login" className="w-8 h-8 cursor-pointer" />
           </div>
 
           <p className="text-center text-sm mt-4 text-gray-600">
@@ -204,7 +206,7 @@ export default function LoginScreen() {
             </div>
 
             <button className="flex items-center justify-center w-full border border-gray-300 py-2 rounded-md gap-2 hover:bg-gray-50 transition">
-              <img src="/img/googleIcon.svg" alt="Google" className="w-5 h-5" />
+              <img src={GoogleIcon} alt="Google" className="w-5 h-5" />
               <span className="text-sm text-gray-700">Continue with Google</span>
             </button>
           </div>

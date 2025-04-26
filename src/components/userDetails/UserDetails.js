@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import phoneIcon from "../../assets/phoneIcon.svg";
+import emailIcon from "../../assets/emailIcon.svg";
+import contactIcon from "../../assets/contactIcon.svg";
 
 export default function UserDetails() {
   const userStatus = 'Inactive'; // change to 'Active' or 'Inactive'
@@ -132,9 +135,9 @@ export default function UserDetails() {
         <div className="w-full flex flex-wrap justify-between items-center gap-6">
           <div>
             <h4 className="font-semibold">John Doe</h4>
-            <p className="text-gray-600 flex gap-2 py-2"><img src="/img/contactIcon.svg" alt="Logo" className="h-7 w-7" />Artist</p>
-            <p className="text-gray-600 flex gap-2"><img src="/img/emailIcon.svg" alt="Logo" className="h-7 w-7" />john@example.com</p>
-            <p className="text-gray-600 flex gap-2 py-2"><img src="/img/phoneIcon.svg" alt="Logo" className="h-7 w-7" />+91 98765 43210</p>
+            <p className="text-gray-600 flex gap-2 py-2"><img src={contactIcon} alt="Logo" className="h-7 w-7" />Artist</p>
+            <p className="text-gray-600 flex gap-2"><img src={emailIcon} alt="Logo" className="h-7 w-7" />john@example.com</p>
+            <p className="text-gray-600 flex gap-2 py-2"><img src={phoneIcon} alt="Logo" className="h-7 w-7" />+91 98765 43210</p>
           </div>
           <div className='bg-sky-100 rounded-md p-6 px-12'>
             <h4 className="font-semibold">Status</h4>

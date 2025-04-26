@@ -4,6 +4,7 @@ import {
   CardContent,
   Typography,
 } from '@mui/material';
+import artistImg from "../../assets/artistImg.svg";
 
 const dummyUsers = [
   {
@@ -53,7 +54,7 @@ export default function Listeners() {
         <Card key={index} className="w-full shadow rounded-lg">
           <CardContent className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-6">
-              <img src="/img/artistImg.svg" alt="Logo" className="h-10 w-10 object-contain" />
+              <img src={artistImg} alt="Logo" className="h-10 w-10 object-contain" />
               <div>
                 <Typography variant="h6">{user.name}</Typography>
                 <Typography variant="body2" color="textSecondary">{user.email}</Typography>
@@ -80,7 +81,7 @@ export default function Listeners() {
                 onClick={() => handleToggle(index)}
               />
               <button>
-                <img src="/img/viewIcon.svg" alt="View" className="h-7 w-7" />
+                <img src={artistImg} alt="View" className="h-7 w-7" />
               </button>
             </div>
           </CardContent>

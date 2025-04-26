@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Search } from '@mui/icons-material'
+import Avatar from "../assets/Avatar.svg";
 
 export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -29,7 +30,7 @@ export default function Navbar() {
   
       <div className="relative">
         <img
-          src="img/Avatar.svg"
+          src={Avatar}
           alt="Avatar"
           className="w-10 h-10 rounded-full cursor-pointer"
           onClick={() => setDropdownOpen(!dropdownOpen)}

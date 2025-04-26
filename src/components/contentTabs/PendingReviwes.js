@@ -4,6 +4,12 @@ import { TextField, MenuItem, FormControl, InputLabel, Select, Button, RadioGrou
 import { CloudUpload, Link as LinkIcon } from "@mui/icons-material"
 import ApproveBtn from '../buttons/ApproveBtn';
 import RejectBtn from '../buttons/RejectBtn';
+import PlayIcon from "../../assets/playIcon.svg";
+import FileIcon from "../../assets/fileIcon.svg";
+import ViewIcon from "../../assets/viewIcon.svg";
+import CloseIcon from "../../assets/CloseIcon.svg";
+import CheckIcon from "../../assets/checkIcon.svg";
+import CrossIcon from "../../assets/crossIcon.svg";
 
 const pendingTracks = [
   {
@@ -56,8 +62,8 @@ export default function PendingReviews() {
             className="lg:flex justify-between items-center p-4 border rounded-md shadow-sm hover:shadow-md transition"
           >
             <div className="flex items-center gap-4">
-            <img src="/img/playIcon.svg" alt="Logo" className="h-7 w-7" />
-            <div className='bg-[#259CE51A] p-1 rounded-lg border-[#259CE5]'><img src="/img/fileIcon.svg" alt="Logo" className="h-7 w-7" /></div>
+            <img src={PlayIcon} alt="Logo" className="h-7 w-7" />
+            <div className='bg-[#259CE51A] p-1 rounded-lg border-[#259CE5]'><img src={FileIcon} alt="Logo" className="h-7 w-7" /></div>
             <div>
                 <div className="font-medium">{track.name}</div>
                 <div className="text-sm text-gray-500">by {track.author}</div>
@@ -72,7 +78,7 @@ export default function PendingReviews() {
               <RejectBtn />
               </>
               )}
-              <button onClick={() => setShowModal(true)}><img src="/img/viewIcon.svg" alt="Logo" className="h-7 w-7" /></button>
+              <button onClick={() => setShowModal(true)}><img src={ViewIcon} alt="Logo" className="h-7 w-7" /></button>
             </div>
             
           </div>
@@ -89,7 +95,7 @@ export default function PendingReviews() {
                 onClick={() => setShowModal(false)}
                 className="text-gray-500 hover:text-gray-700"
               >
-                <img src="/img/CloseIcon.svg" alt="Close" className="h-6 w-6" />
+                <img src={CloseIcon} alt="Close" className="h-6 w-6" />
               </button>
             </div>
 
@@ -138,7 +144,7 @@ export default function PendingReviews() {
                   <div>
                     <h5 className="text-md font-semibold mb-6">Audio Preview</h5>
                     <div className="p-4 bg-white rounded-md shadow flex items-center justify-center gap-4 mb-6">
-                      <img src="/img/playIcon.svg" alt="Logo" className="h-11 w-11" />
+                      <img src={PlayIcon} alt="Logo" className="h-11 w-11" />
                       <div className="flex items-center gap-2 w-full">
                         <input
                           type="range"
@@ -180,7 +186,7 @@ export default function PendingReviews() {
                           color: '#FFFFFF',
                         }}
                       >
-                        <img src="/img/checkIcon.svg" alt="checkIcon" className="h-5 w-5 mr-2" />
+                        <img src={CheckIcon} alt="checkIcon" className="h-5 w-5 mr-2" />
                         Approve
                       </Button>
                       <Button
@@ -195,7 +201,7 @@ export default function PendingReviews() {
                           color: 'rgba(240, 87, 75, 1)',
                         }}
                       >
-                      <img src="/img/crossIcon.svg" alt="crossIcon" className="h-5 w-5 mr-2" />
+                      <img src={CrossIcon} alt="crossIcon" className="h-5 w-5 mr-2" />
                         Reject
                       </Button>
                     </div>

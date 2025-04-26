@@ -1,5 +1,7 @@
 import { TextField, Button } from "@mui/material";
 import { useState } from "react";
+import BackupIcon from "../../assets/backupIcon.svg";
+import CloseIcon from "../../assets/CloseIcon.svg";
 
 export default function AddNewTrack({ setShowModal }) {
   const [uploadedModal, setUploadedModal] = useState(false);
@@ -53,7 +55,7 @@ export default function AddNewTrack({ setShowModal }) {
                   <p className="text-sm text-gray-500">Add your documents here, and you can upload up to 5 files max</p>
 
                   <div className="w-full border-dashed border-2 border-gray-300 rounded-md p-5 flex flex-col items-center justify-center space-y-2">
-                    <img src="/img/backupIcon.svg" alt="Upload" className="h-12 w-12" />
+                    <img src={BackupIcon} alt="Upload" className="h-12 w-12" />
                     <p className="text-sm text-gray-500">
                       Drag your file(s) or <span className="text-[#1849D6]">browse</span>
                     </p>
@@ -81,7 +83,6 @@ export default function AddNewTrack({ setShowModal }) {
                   </div>
                 </div>
 
-                {/* Lyrics or Description */}
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-medium text-gray-700">Add Lyrics or Short Description</label>
                   <TextField
@@ -114,7 +115,7 @@ export default function AddNewTrack({ setShowModal }) {
           <div>
           <div className="flex justify-between py-4">
             <h3 className="text-2xl font-bold">New Track Uploaded</h3>
-            <img src="/img/CloseIcon.svg" alt="Success" className="w-8 h-8 mb-4" onClick={()=>{setUploadedModal(false) ;setShowModal(false)}} />
+            <img src={CloseIcon} alt="Success" className="w-8 h-8 mb-4" onClick={()=>{setUploadedModal(false) ;setShowModal(false)}} />
           </div>
           <p>Your content has been uploaded you will be updated once its reviewed and published</p>
           </div>
