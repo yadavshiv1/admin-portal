@@ -15,17 +15,18 @@ import Feedback from "../components/tabs/Feedback";
 import Search from "../components/tabs/Search";
 import Logout from "../components/tabs/Logout";
 import Notification from "../components/tabs/Notification";
+import ManageCoupon from "./tabs/ManageCoupon";
 
 const tabComponents = {
   Dashboard,
   "Content Management":Content,
-  Analytics,
+  // Analytics,
   "Users Management": UsersManagement,
-  Notification,
+  // Notification,
   Settings,
   Support,
   Feedback,
-  "Search & Discovery":Search,
+  "Manage Coupon":ManageCoupon,
   Logout,
 };
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import LoginAndContineBtn from "./buttons/LoginAndContinueBtn";
 
 export default function LoginScreen() {
   const [activeTab, setActiveTab] = useState("Artist");
@@ -98,13 +99,16 @@ export default function LoginScreen() {
             </div>
 
             <div className="text-center">
-              <button
-                onClick={handleLogin}
-                type="submit"
-                className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
-              >
-                Login
-              </button>
+            <LoginAndContineBtn
+              title="Login"
+              handle={() => {
+                localStorage.setItem("token", "your-token");
+                localStorage.setItem("role", selected);
+                navigate("/dashboard");
+              }}
+            />
+
+             
             </div>
           </form>
 
@@ -192,9 +196,8 @@ export default function LoginScreen() {
               </a>
             </div>
 
-            <button onClick={()=>{setVerifyEmail(true);setSignUp(false)}} className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
-              Continue
-            </button>
+            <LoginAndContineBtn handle={()=>{setVerifyEmail(true);setSignUp(false)}} title="Continue"/>
+              
             <div className="flex items-center justify-center gap-2 my-2">
               <div className="h-px flex-grow bg-gray-300"></div>
               <span className="text-sm text-gray-500">or continue with</span>
@@ -214,9 +217,7 @@ export default function LoginScreen() {
               <h2 className="text-3xl font-bold text-gray-800">Verify Email</h2>
               <p className="text-gray-500 mt-1">We have sent an verification email to m*****e@gmail.com</p>
             </div>
-            <button onClick={()=>{setVerifyEmail(false);setCompleteProfile(true)}} className="w-full mt-20 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
-              Continue
-            </button>
+            <LoginAndContineBtn onClick={()=>{setVerifyEmail(false);setCompleteProfile(true)}} title="Continue"/>
             <p className="text-center text-sm mt-4 text-gray-600">
             Already a user ? 
             <a onClick={() => {setSignUp(true);setLoginUp(false);}} className="text-blue-500 hover:underline font-medium">
@@ -254,9 +255,8 @@ export default function LoginScreen() {
                   <span>Admin</span>
                 </label>
               </div>
-              <button onClick={()=>{setVerifyEmail(false);setCompleteProfile(true)}} className="w-full mt-20 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
-              Continue
-            </button>
+              <LoginAndContineBtn onClick={()=>{setVerifyEmail(false);setCompleteProfile(true)}} title="Continue" />
+              
             <p className="text-center text-sm mt-4 text-gray-600">
             Already a user ? 
             <a onClick={() => {setSignUp(true);setLoginUp(false);}} className="text-blue-500 hover:underline font-medium">

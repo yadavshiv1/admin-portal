@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { PlayArrow } from '@mui/icons-material';
 import { TextField, MenuItem, FormControl, InputLabel, Select, Button, RadioGroup, FormControlLabel, Radio } from "@mui/material";
 import { CloudUpload, Link as LinkIcon } from "@mui/icons-material"
+import ApproveBtn from '../buttons/ApproveBtn';
+import RejectBtn from '../buttons/RejectBtn';
 
 const pendingTracks = [
   {
@@ -66,24 +68,8 @@ export default function PendingReviews() {
             <div className="flex gap-2">
             {role==="admin" &&(
               <>
-              <Button variant="outlined" sx={{
-                  mr: 1,
-                  backgroundColor: 'rgba(240, 87, 75, 0.1)',
-                  border: '1px solid rgba(240, 87, 75, 1)',
-                  borderRadius: '8px',
-                  color: 'rgba(240, 87, 75, 1)',
-                }}>
-                  Reject
-                </Button>
-                <Button variant="contained" sx={{
-                  mr: 1,
-                  backgroundColor: '#259CE5',
-                  border: '1px solid rgba(37, 156, 229, 1)',
-                  borderRadius: '8px',
-                  color: '#FFFFFF',
-                }}>
-                    Approve
-                  </Button>
+              <ApproveBtn />
+              <RejectBtn />
               </>
               )}
               <button onClick={() => setShowModal(true)}><img src="/img/viewIcon.svg" alt="Logo" className="h-7 w-7" /></button>
