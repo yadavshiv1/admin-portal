@@ -32,10 +32,11 @@ const tabComponents = {
 
 export default function HomeScreen() {
   const [activeTab, setActiveTab] = useState("Dashboard");
+  // const [role, setRole] = useState("admin");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDesktopSidebarOpen, setIsDesktopSidebarOpen] = useState(true);
   const ActiveComponent = tabComponents[activeTab];
-  const role = localStorage.getItem("role");
+  // const role = localStorage.getItem("role");
 
   return (
     <div className="flex h-screen bg-gray-100 relative overflow-hidden font-jakarta">

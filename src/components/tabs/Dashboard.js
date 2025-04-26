@@ -6,7 +6,8 @@ import CircleChart from "../../components/CircleChart"
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("Positive");
-  const role = localStorage.getItem("role");
+  // const role = localStorage.getItem("role");
+      const [role, setRole] = useState("admin");
 
   return (
     <div className="space-y-6 font-jakarta">

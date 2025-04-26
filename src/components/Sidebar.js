@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Avatar } from "@mui/material";
 
 const mainTabs = [
@@ -17,7 +17,8 @@ const extraTabs = [
 
 
 export default function Sidebar({ activeTab, setActiveTab}) {
-  const role = localStorage.getItem("role");
+  // const role = localStorage.getItem("role");
+    const [role, setRole] = useState("admin");
   const allowedTabsForArtist = ["Content Management", "Dashboard"];
 
   return (

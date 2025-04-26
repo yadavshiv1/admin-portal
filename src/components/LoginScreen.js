@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginAndContineBtn from "./buttons/LoginAndContinueBtn";
 
@@ -11,19 +11,18 @@ export default function LoginScreen() {
   const [completeProfile, setCompleteProfile] = useState(false);
   const [selected, setSelected] = useState("artist");
   const navigate = useNavigate();
-  const [role, setRole] = useState(selected);
-
-
+  // const [role, setRole] = useState(selected);
+  
   const [form, setForm] = useState({
     name: "",
     contact: "",
     email: "",
     password: ""
-  });
+  }); 
 
   const handleLogin = () => {
     localStorage.setItem("token", "yogananda-secret-token");
-    localStorage.setItem("role", role); 
+    // localStorage.setItem("role", selected); 
     navigate("/dashboard");
   };
 
@@ -103,7 +102,7 @@ export default function LoginScreen() {
               title="Login"
               handle={() => {
                 localStorage.setItem("token", "your-token");
-                localStorage.setItem("role", selected);
+                // localStorage.setItem("role", selected);
                 navigate("/dashboard");
               }}
             />
