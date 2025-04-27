@@ -5,6 +5,7 @@ import {
   Typography,
 } from '@mui/material';
 import artistImg from "../../../assets/artistImg.svg";
+import viewIcon from "../../../assets/viewIcon.svg";
 import enableSwitchicon from "../../../assets/enableSwitchicon.svg";
 import disabledIcon from "../../../assets/disabledIcon.svg";
 
@@ -83,7 +84,7 @@ export default function Listeners() {
                 onClick={() => handleToggle(index)}
               />
               <button>
-                <img src={artistImg} alt="View" className="h-7 w-7" />
+                <img src={viewIcon} alt="View" className="h-7 w-7" />
               </button>
             </div>
           </CardContent>

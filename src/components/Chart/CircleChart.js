@@ -17,7 +17,7 @@ const dummyData = [
 
 const valueFormatter = ({ value }) => `${value}%`;
 
-export default function DonutPieChart() {
+export default function DonutPieChart({ data,selectedMonth }) {
   const [itemData, setItemData] = useState();
 
   return (
@@ -27,10 +27,10 @@ export default function DonutPieChart() {
       sx={{ width: '100%', p: 2 }}
     >
       <Box sx={{ flexGrow: 1 }}>
-      <PieChart
+        <PieChart
           series={[
             {
-              data: dummyData,
+              data: data,
               innerRadius: 60,
               outerRadius: 100,
               valueFormatter,
@@ -41,6 +41,13 @@ export default function DonutPieChart() {
           height={300}
           onItemClick={(_, d) => setItemData(d)}
         />
+        {itemData && (
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="h6">
+              {itemData.label} - {itemData.value}%
+            </Typography>
+          </Box>
+        )}
       </Box>
     </Stack>
   );

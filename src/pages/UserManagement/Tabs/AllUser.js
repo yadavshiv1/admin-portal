@@ -109,37 +109,38 @@ export default function AllUser() {
                     {user.status}
                   </TableCell>
 
-                  <TableCell
-                    sx={{
-                      background:
-                        user.role === 'Artist'
-                          ? 'rgba(255, 225, 32, 0.1)'
-                          : user.role === 'Listener'
-                          ? 'rgba(37, 156, 229, 0.1)'
-                          : user.role === 'Admin'
-                          ? 'rgba(120, 124, 130, 0.1)'
-                          : 'inherit',
-                      color:'rgba(80, 87, 94, 1)',
-                      fontWeight: 500,
-                      border: '1px solid',
-                      borderColor:
-                        user.role === 'Artist'
-                          ? 'rgba(255, 225, 32, 0.6)'
-                          : user.role === 'Listener'
-                          ? 'rgba(37, 156, 229, 1)'
-                          : user.role === 'Admin'
-                          ? 'rgba(120, 124, 130, 1)'
-                          : 'inherit',
-                      borderRadius: '8px',
-                      px: 2,
-                      py: 0.5,
-                      my:4.4,
-                      display: 'inline-block',
-                      width: '100px',
-                      textAlign: 'center',
-                    }}
-                  >
-                    {user.role}
+                  <TableCell>
+                    <Box
+                      sx={{
+                        background:
+                          user.role === 'Artist'
+                            ? 'rgba(255, 225, 32, 0.1)'
+                            : user.role === 'Listener'
+                            ? 'rgba(37, 156, 229, 0.1)'
+                            : user.role === 'Admin'
+                            ? 'rgba(120, 124, 130, 0.1)'
+                            : 'inherit',
+                        color: 'rgba(80, 87, 94, 1)',
+                        fontWeight: 500,
+                        border: '1px solid',
+                        borderColor:
+                          user.role === 'Artist'
+                            ? 'rgba(255, 225, 32, 0.6)'
+                            : user.role === 'Listener'
+                            ? 'rgba(37, 156, 229, 1)'
+                            : user.role === 'Admin'
+                            ? 'rgba(120, 124, 130, 1)'
+                            : 'inherit',
+                        borderRadius: '8px',
+                        px: 2,
+                        py: 0.5,
+                        display: 'inline-block',
+                        width: '100px',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {user.role}
+                    </Box>
                   </TableCell>
 
                   <TableCell>

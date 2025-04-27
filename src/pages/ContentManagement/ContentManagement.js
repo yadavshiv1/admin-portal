@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import Tracks from "./Tabs/Tracks";
 import Playlist from "./Tabs/Playlist";
 import Albums from "./Tabs/Albums";
-import PendingReviwes from "./Tabs/PendingReviwes";
+import PendingReviews from "./Tabs/PendingReviews";
 import AddNewTrack from "./Tabs/AddNewTrack";
 import AddIcon from "../../assets/AddIcon.svg"
 import searchIcon from "../../assets/searchIcon.svg"
 
-const tabs = ["Tracks", "Playlist", "Albums", "PendingReviwes"];
+const tabs = ["Tracks", "Playlist", "Albums", "PendingReviews"];
 
 const tabComponents = {
   Tracks: Tracks,
   Playlist: Playlist,
   Albums: Albums,
-  PendingReviwes: PendingReviwes,
+  PendingReviews: PendingReviews,
 };
 
 export default function ContentManagement() {
@@ -49,7 +49,7 @@ export default function ContentManagement() {
             ))}
           </div>
           <div className="flex items-center justify-between">
-              {activeTab === "PendingReviwes" ? (
+              {activeTab === "PendingReviews" ? (
                 <div className="relative w-80">
                   <input
                     type="text"
