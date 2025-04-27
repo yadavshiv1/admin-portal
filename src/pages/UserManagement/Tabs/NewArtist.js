@@ -11,6 +11,7 @@ import {
   Paper,
   Button,
 } from '@mui/material';
+import searchIcon from "../../../assets/searchIcon.svg";
 
 const dummyUsers = [
   { name: 'John Doe', email: 'john@example.com', date: '2024-04-01', role: 'Pending' },
@@ -43,7 +44,7 @@ export default function NewArtist() {
     <Box sx={{ p: 3 }}>
       <div className="flex items-center border border-gray-300 rounded-md bg-white px-3 py-2 w-80 mb-6">
         <img 
-          src="/img/searchIcon.svg"
+          src={searchIcon}
           alt="Search"
           className="h-5 w-5 text-gray-400 mr-2"
         />

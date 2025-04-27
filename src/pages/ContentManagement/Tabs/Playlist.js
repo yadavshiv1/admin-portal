@@ -3,6 +3,10 @@ import { PlayArrow, Description, Visibility } from '@mui/icons-material';
 import { Switch } from '@mui/material';
 import ViewIcon from "../../../assets/viewIcon.svg";
 import PlayIcon from "../../../assets/playIcon.svg";
+import searchIcon from "../../../assets/searchIcon.svg";
+import filterIcon from "../../../assets/filterIcon.svg";
+import enableSwitchicon from "../../../assets/enableSwitchicon.svg";
+import disabledIcon from "../../../assets/disabledIcon.svg";
 
 const dummyTracks = [
   {
@@ -36,7 +40,7 @@ const dummyTracks = [
 
 export default function Playlist() {
   const [query, setQuery] = useState('');
-  const role = localStorage.getItem("role");
+  const [role, setRole] = useState("admin");
 
   const [switchStates, setSwitchStates] = useState(() => {
       const initialState = {};
@@ -62,7 +66,7 @@ export default function Playlist() {
                 className="w-full p-2 pl-10 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
               />
               <img 
-                src="/img/searchIcon.svg"
+                src={searchIcon}
                 alt="Search"
                 className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
               />
@@ -72,7 +76,7 @@ export default function Playlist() {
               className="flex items-center space-x-1 p-2 border rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               <img 
-                src="/img/filterIcon.svg"
+                src={filterIcon}
                 alt="Filter"
                 className="h-5 w-5 text-gray-600"
               />
@@ -131,7 +135,7 @@ export default function Playlist() {
                 <td className="p-3 flex items-center gap-4">
                 {role==="admin" &&(
                     <img
-                      src={switchStates[track.id] ? "/img/enableSwitchicon.svg" : "/img/disabledIcon.svg"}
+                      src={switchStates[track.id] ? enableSwitchicon: disabledIcon}
                       alt="Toggle"
                       className="h-9 w-9 cursor-pointer"
                       onClick={() =>

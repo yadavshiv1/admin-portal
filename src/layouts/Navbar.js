@@ -37,13 +37,19 @@ export default function Navbar() {
         />
         {dropdownOpen && (
           <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md z-10">
-            <button className="block px-4 py-2 hover:bg-gray-100 w-full text-left">
-              Profile
-            </button>
-            <button className="block px-4 py-2 hover:bg-gray-100 w-full text-left">
-              Logout
-            </button>
-          </div>
+          <button className="block px-4 py-2 hover:bg-gray-100 w-full text-left text-gray-700">
+            Account 
+          </button>
+          <div className="border-t my-1"></div> 
+          <button className="block px-4 py-2 hover:bg-gray-100 w-full text-left text-gray-500">
+            Setting
+          </button>
+          <div className="my-1"></div>
+          <button className="block px-4 py-2 hover:bg-gray-100 w-full text-left text-red-500 font-semibold">
+            Logout
+          </button>
+        </div>
+        
         )}
       </div>
     </div>

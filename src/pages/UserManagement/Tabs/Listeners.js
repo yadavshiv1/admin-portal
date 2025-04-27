@@ -5,6 +5,8 @@ import {
   Typography,
 } from '@mui/material';
 import artistImg from "../../../assets/artistImg.svg";
+import enableSwitchicon from "../../../assets/enableSwitchicon.svg";
+import disabledIcon from "../../../assets/disabledIcon.svg";
 
 const dummyUsers = [
   {
@@ -75,7 +77,7 @@ export default function Listeners() {
 
             <div className="flex items-center gap-4">
               <img
-                src={toggleStates[index] ? "/img/enableSwitchicon.svg" : "/img/disabledIcon.svg"}
+                src={toggleStates[index] ?  enableSwitchicon: disabledIcon}
                 alt="Toggle"
                 className="h-9 w-9 cursor-pointer"
                 onClick={() => handleToggle(index)}

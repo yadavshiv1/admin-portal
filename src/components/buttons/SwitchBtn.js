@@ -1,4 +1,6 @@
 import { useState } from "react";
+import enableSwitchicon from "../../assets/enableSwitchicon.svg";
+import disabledIcon from "../../assets/disabledIcon.svg";
 
 export default function SwitchBtn({ index }) {
   const [toggleStates, setToggleStates] = useState({});
@@ -12,7 +14,7 @@ export default function SwitchBtn({ index }) {
 
   return (
     <img
-      src={toggleStates[index] ? "/img/enableSwitchicon.svg" : "/img/disabledIcon.svg"}
+      src={toggleStates[index] ? enableSwitchicon : disabledIcon}
       alt="Toggle"
       className="h-9 w-9 cursor-pointer"
       onClick={() => handleToggle(index)}

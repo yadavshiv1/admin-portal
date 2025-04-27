@@ -84,9 +84,8 @@ export default function Sidebar({ activeTab, setActiveTab}) {
         </nav>
       </div>
 
-      <div className="border-t px-4 py-3">
+      <div className="border-t px-8 py-3">
         <div className="flex items-center gap-3">
-          <Avatar src={AvatarImg} alt="User" />
           <div>
             <p className="text-sm font-medium">John Doe</p>
             <p className="text-xs text-gray-500">john@example.com</p>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LoginAndContineBtn from "../../components/Buttons/LoginAndContinueBtn";
+import LoginAndContineBtn from "../../components/buttons/LoginAndContinueBtn";
 import LoginScreenImage from "../../../src/assets/loginScreen.svg";
 import GoogleIcon from "../../../src/assets/Googleicon.svg"; 
 

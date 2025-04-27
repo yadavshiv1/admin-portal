@@ -6,6 +6,8 @@ import FileIcon from "../../../assets/fileIcon.svg";
 import ViewIcon from "../../../assets/viewIcon.svg";
 import SearchIcon from "../../../assets/searchIcon.svg";
 import FilterIcon from "../../../assets/filterIcon.svg";
+import enableSwitchicon from "../../../assets/enableSwitchicon.svg";
+import disabledIcon from "../../../assets/disabledIcon.svg";
 
 const dummyTracks = [
   {
@@ -39,7 +41,7 @@ const dummyTracks = [
 
 export default function Albums() {
   const [query, setQuery] = useState('');
-  const role = localStorage.getItem("role");
+  const [role, setRole] = useState("admin");
   const [switchStates, setSwitchStates] = useState(() => {
         const initialState = {};
         dummyTracks.forEach((track) => {
@@ -133,7 +135,7 @@ export default function Albums() {
                 <td className="p-3 flex items-center gap-4">
                 {role==="admin" &&(
                     <img
-                      src={switchStates[track.id] ? "/img/enableSwitchicon.svg" : "/img/disabledIcon.svg"}
+                      src={switchStates[track.id] ? enableSwitchicon : disabledIcon}
                       alt="Toggle"
                       className="h-9 w-9 cursor-pointer"
                       onClick={() =>

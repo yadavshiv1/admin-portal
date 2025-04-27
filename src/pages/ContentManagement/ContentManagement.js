@@ -4,6 +4,8 @@ import Playlist from "./Tabs/Playlist";
 import Albums from "./Tabs/Albums";
 import PendingReviwes from "./Tabs/PendingReviwes";
 import AddNewTrack from "./Tabs/AddNewTrack";
+import AddIcon from "../../assets/AddIcon.svg"
+import searchIcon from "../../assets/searchIcon.svg"
 
 const tabs = ["Tracks", "Playlist", "Albums", "PendingReviwes"];
 
@@ -57,7 +59,7 @@ export default function ContentManagement() {
                     className="w-full p-2 pl-10 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                   />
                   <img 
-                    src="/img/searchIcon.svg"
+                    src={searchIcon}
                     alt="Search"
                     className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
                   />
@@ -68,7 +70,7 @@ export default function ContentManagement() {
                   className="flex items-center gap-2 text-sm px-3 py-1.5 rounded-md bg-[#259CE5] text-white hover:bg-[#259CE5] transition"
                 >
                   <img
-                    src="/img/AddIcon.svg"
+                    src={AddIcon}
                     alt="Add"
                     className="w-6 h-6"
                   />

@@ -3,6 +3,8 @@ import NewArtist from "./Tabs/NewArtist";
 import AllUser from "./Tabs/AllUser";
 import Artists from "./Tabs/Artists";
 import Listeners from "./Tabs/Listeners";
+import AddIcon from "../../assets/AddIcon.svg"
+import searchIcon from "../../assets/searchIcon.svg"
 
 const tabs = ["New Artist", "All Users", "Artists", "Listeners"];
 
@@ -28,7 +30,7 @@ export default function UsersManagement() {
                   className="flex items-center gap-2 text-sm px-3 py-1.5 rounded-md bg-[#259CE5] text-white hover:bg-[#259CE5] transition"
                 >
                   <img
-                    src="/img/AddIcon.svg"
+                    src={AddIcon}
                     alt="Add"
                     className="w-6 h-6"
                   />
@@ -57,7 +59,7 @@ export default function UsersManagement() {
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <img 
-                src="/img/searchIcon.svg"
+                src={searchIcon}
                 alt="Search"
                 className="h-5 w-5 text-gray-400"
               />

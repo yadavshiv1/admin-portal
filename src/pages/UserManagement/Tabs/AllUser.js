@@ -11,6 +11,10 @@ import {
   Paper,
   IconButton,
 } from '@mui/material';
+import filterIcon from "../../../assets/filterIcon.svg";
+import searchIcon from "../../../assets/searchIcon.svg";
+import editIcon from "../../../assets/editIcon.svg";
+import viewIcon from "../../../assets/viewIcon.svg";
 
  const dummyUsers = [
   { name: 'John Doe', email: 'john@example.com', status: 'Pending', role: 'Artist' },
@@ -46,7 +50,7 @@ export default function AllUser() {
       <div className="flex items-center gap-4 mb-6">
         <div className="flex items-center border border-gray-300 rounded-md bg-white px-3 py-2 w-80">
           <img 
-            src="/img/searchIcon.svg"
+            src={searchIcon}
             alt="Search"
             className="h-5 w-5 text-gray-400 mr-2"
           />
@@ -64,7 +68,7 @@ export default function AllUser() {
           className="flex items-center space-x-2 px-3 py-1.5 border border-gray-400 rounded-lg text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
         >
           <img 
-            src="/img/filterIcon.svg"
+            src={filterIcon}
             alt="Filter"
             className="w-5 h-5"
           />
@@ -142,14 +146,14 @@ export default function AllUser() {
                       <Box display="flex" alignItems="center" gap={2}>
                         <Box
                           component="img"
-                          src="/img/editIcon.svg"
+                          src={editIcon}
                           alt="Edit"
                           sx={{ width: 25, height: 25, cursor: 'pointer' }}
                           onClick={() => handleEdit(user)}
                         />
                         <Box
                           component="img"
-                          src="/img/viewIcon.svg"
+                          src={viewIcon}
                           alt="View"
                           sx={{ width: 25, height: 25, cursor: 'pointer' }}
                           onClick={() => handleView(user)}

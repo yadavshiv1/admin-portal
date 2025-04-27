@@ -6,6 +6,8 @@ import {
 } from '@mui/material';
 import artistImg from "../../../assets/artistImg.svg";
 import viewIcon from "../../../assets/viewIcon.svg";
+import enableSwitchicon from "../../../assets/enableSwitchicon.svg";
+import disabledIcon from "../../../assets/disabledIcon.svg";
 
 const dummyUsers = [
   {
@@ -79,7 +81,7 @@ export default function Abc() {
             <div className="flex items-center gap-2">
               <div className="p-3 flex items-center gap-4">
                 <img
-                  src={switchStates[user.id] ? "/img/enableSwitchicon.svg" : "/img/disabledIcon.svg"}
+                  src={switchStates[user.id] ? enableSwitchicon : disabledIcon}
                   alt="Toggle"
                   className="h-9 w-9 cursor-pointer"
                   onClick={() =>

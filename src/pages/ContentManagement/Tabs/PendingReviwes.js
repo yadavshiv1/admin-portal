@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { PlayArrow } from '@mui/icons-material';
 import { TextField, MenuItem, FormControl, InputLabel, Select, Button, RadioGroup, FormControlLabel, Radio } from "@mui/material";
 import { CloudUpload, Link as LinkIcon } from "@mui/icons-material"
-import ApproveBtn from '../../../components/Buttons/ApproveBtn';
-import RejectBtn from '../../../components/Buttons/RejectBtn';
+import ApproveBtn from '../../../components/buttons/ApproveBtn';
+import RejectBtn from '../../../components/buttons/RejectBtn';
 import PlayIcon from "../../../assets/playIcon.svg";
 import FileIcon from "../../../assets/fileIcon.svg";
 import ViewIcon from "../../../assets/viewIcon.svg";
@@ -28,7 +28,7 @@ export default function PendingReviews() {
   const [query, setQuery] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [sliderValue, setSliderValue] = useState(0);
-  const role = localStorage.getItem("role");
+  const [role, setRole] = useState("admin");
   const dummyData = `Whispers from the universe,
   In the stillness of the dawn, I hear a sacred call,
   Whispers from the universe, In the stillness of the dawn,
