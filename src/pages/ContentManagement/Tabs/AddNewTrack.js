@@ -1,7 +1,7 @@
 import { TextField, Button } from "@mui/material";
 import { useState } from "react";
-import BackupIcon from "../../assets/backupIcon.svg";
-import CloseIcon from "../../assets/CloseIcon.svg";
+import BackupIcon from "../../../assets/backupIcon.svg";
+import CloseIcon from "../../../assets/CloseIcon.svg";
 
 export default function AddNewTrack({ setShowModal }) {
   const [uploadedModal, setUploadedModal] = useState(false);

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LoginAndContineBtn from "./buttons/LoginAndContinueBtn";
-import LoginScreenImage from "../../src/assets/loginScreen.svg";
-import GoogleIcon from "../../src/assets/Googleicon.svg"; 
+import LoginAndContineBtn from "../../components/Buttons/LoginAndContinueBtn";
+import LoginScreenImage from "../../../src/assets/loginScreen.svg";
+import GoogleIcon from "../../../src/assets/Googleicon.svg"; 
 
-export default function LoginScreen() {
+export default function Login() {
   const [activeTab, setActiveTab] = useState("Artist");
   const [showPassword, setShowPassword] = useState(false);
   const [singUp, setSignUp] = useState(false);

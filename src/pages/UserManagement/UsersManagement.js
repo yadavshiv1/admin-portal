@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import NewArtist from "../../components/UserTabs/NewArtist";
-import AllUser from "../../components/UserTabs/AllUser";
-import Artists from "../../components/UserTabs/Artists";
-import Listeners from "../../components/UserTabs/Listeners";
+import NewArtist from "./Tabs/NewArtist";
+import AllUser from "./Tabs/AllUser";
+import Artists from "./Tabs/Artists";
+import Listeners from "./Tabs/Listeners";
 
 const tabs = ["New Artist", "All Users", "Artists", "Listeners"];
 

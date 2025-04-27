@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SwitchBtn from "../buttons/SwitchBtn";
+import SwitchBtn from "../../components/Buttons/SwitchBtn";
 import PlusIcon from "../../assets/PlusIcon.svg";
 import Minusicon from "../../assets/Minusicon.svg";
 import dollarIcon from "../../assets/dollarIcon.svg";

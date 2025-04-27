@@ -1,5 +1,5 @@
 import React from "react";
-import UserDetails from "../userDetails/UserDetails";
+import UserDetails from "../UserDetails/UserDetails";
 
 export default function Settings() {
   return (

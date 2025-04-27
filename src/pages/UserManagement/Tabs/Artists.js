@@ -4,8 +4,8 @@ import {
   CardContent,
   Typography,
 } from '@mui/material';
-import artistImg from "../../assets/artistImg.svg";
-import viewIcon from "../../assets/viewIcon.svg";
+import artistImg from "../../../assets/artistImg.svg";
+import viewIcon from "../../../assets/viewIcon.svg";
 
 const dummyUsers = [
   {

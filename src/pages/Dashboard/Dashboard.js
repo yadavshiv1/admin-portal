@@ -1,8 +1,8 @@
 import React,{ useState } from "react";
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
-import Chart from "../../components/Chart"
-import CircleChart from "../../components/CircleChart"
+import Chart from "../../components/Chart/Chart"
+import CircleChart from "../../components/Chart/CircleChart"
 import UserManagementIcon from "../../assets/userManagementIcon.svg";
 import contentManagementIcon from "../../assets/contentManagementIcon.svg";
 import activesubIcon from "../../assets/activesubIcon.svg";

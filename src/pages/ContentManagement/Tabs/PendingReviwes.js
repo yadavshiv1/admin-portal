@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { PlayArrow } from '@mui/icons-material';
 import { TextField, MenuItem, FormControl, InputLabel, Select, Button, RadioGroup, FormControlLabel, Radio } from "@mui/material";
 import { CloudUpload, Link as LinkIcon } from "@mui/icons-material"
-import ApproveBtn from '../buttons/ApproveBtn';
-import RejectBtn from '../buttons/RejectBtn';
-import PlayIcon from "../../assets/playIcon.svg";
-import FileIcon from "../../assets/fileIcon.svg";
-import ViewIcon from "../../assets/viewIcon.svg";
-import CloseIcon from "../../assets/CloseIcon.svg";
-import CheckIcon from "../../assets/checkIcon.svg";
-import CrossIcon from "../../assets/crossIcon.svg";
+import ApproveBtn from '../../../components/Buttons/ApproveBtn';
+import RejectBtn from '../../../components/Buttons/RejectBtn';
+import PlayIcon from "../../../assets/playIcon.svg";
+import FileIcon from "../../../assets/fileIcon.svg";
+import ViewIcon from "../../../assets/viewIcon.svg";
+import CloseIcon from "../../../assets/CloseIcon.svg";
+import CheckIcon from "../../../assets/checkIcon.svg";
+import CrossIcon from "../../../assets/crossIcon.svg";
 
 const pendingTracks = [
   {

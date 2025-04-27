@@ -1,21 +1,16 @@
 import React, { useState } from "react";
-import Sidebar from "../../src/components/Sidebar";
-import Navbar from "../../src/components/Navbar";
+import Sidebar from "../../layouts/Sidebar";
+import Navbar from "../../layouts/Navbar";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import Dashboard from "../components/tabs/Dashboard";
-import Content from "../components/tabs/Content";
-import Analytics from "../components/tabs/Analytics";
-import UsersManagement from "../components/tabs/UsersManagement";
-import Settings from "../components/tabs/Settings";
-import Support from "../components/tabs/Support";
-import Feedback from "../components/tabs/Feedback";
-import Search from "../components/tabs/Search";
-import Logout from "../components/tabs/Logout";
-import Notification from "../components/tabs/Notification";
-import ManageCoupon from "./tabs/ManageCoupon";
+import Dashboard from "../Dashboard/Dashboard";
+import Content from "../ContentManagement/ContentManagement";
+import UsersManagement from "../UserManagement/UsersManagement";
+import Settings from "../Settings/Settings";
+import Support from "../Support/Support";
+import ManageCoupon from "../ManageCoupon/ManageCoupon";
 
 const tabComponents = {
   Dashboard,
@@ -25,9 +20,7 @@ const tabComponents = {
   // Notification,
   Settings,
   Support,
-  Feedback,
   "Manage Coupon":ManageCoupon,
-  Logout,
 };
 
 export default function HomeScreen() {

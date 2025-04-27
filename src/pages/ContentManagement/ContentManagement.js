@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Tracks from "../contentTabs/Tracks";
-import Playlist from "../contentTabs/Playlist";
-import Albums from "../contentTabs/Albums";
-import PendingReviwes from "../contentTabs/PendingReviwes";
-import AddNewTrack from "../contentTabs/AddNewTrack";
+import Tracks from "./Tabs/Tracks";
+import Playlist from "./Tabs/Playlist";
+import Albums from "./Tabs/Albums";
+import PendingReviwes from "./Tabs/PendingReviwes";
+import AddNewTrack from "./Tabs/AddNewTrack";
 
 const tabs = ["Tracks", "Playlist", "Albums", "PendingReviwes"];
 
@@ -14,7 +14,7 @@ const tabComponents = {
   PendingReviwes: PendingReviwes,
 };
 
-export default function Content() {
+export default function ContentManagement() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const ActiveComponent = tabComponents[activeTab];
   const [showModal, setShowModal] = useState(false);
